@@ -1,0 +1,74 @@
+%% Creator: Inkscape inkscape 0.48.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'diagram.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{557.60020163bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.7346192)%
+    \put(0,0){\includegraphics[width=\unitlength]{diagram.pdf}}%
+    \put(0.20742594,0.0319325){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{UDP}}}%
+    \put(0.2089055,0.11498441){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{AES-OCB}}}%
+    \put(0.20804243,0.19957359){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{SSP}}}%
+    \put(0.1008854,0.38129515){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{Terminal}}}%
+    \put(0.10363224,0.2607787){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{sender}}}%
+    \put(0.31030193,0.26114088){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{receiver}}}%
+    \put(0.31556934,0.38493239){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{Keystrokes}}}%
+    \put(0.20865891,0.61305283){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Application (e.g., emacs)}}}%
+    \put(0.20785748,0.52620184){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Pseudo-terminal}}}%
+    \put(0.79135687,0.0319325){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{UDP}}}%
+    \put(0.79283642,0.11498441){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{AES-OCB}}}%
+    \put(0.79197335,0.19957359){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{SSP}}}%
+    \put(0.68481632,0.38129515){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{Keystrokes}}}%
+    \put(0.68756316,0.2607787){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{sender}}}%
+    \put(0.89423286,0.26114088){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{receiver}}}%
+    \put(0.89950027,0.38493239){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{Terminal}}}%
+    \put(0.79258983,0.61305283){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Terminal emulator (e.g., xterm)}}}%
+    \put(0.7917884,0.52620184){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Pseudo-terminal}}}%
+    \put(0.07477952,0.70627788){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Mosh Server}}}%
+    \put(0.66701621,0.70627788){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Mosh Client}}}%
+  \end{picture}%
+\endgroup%

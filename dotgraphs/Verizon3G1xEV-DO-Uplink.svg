@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600"
+   height="480"
+   viewBox="0 0 600 480"
+   id="svg3933"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="Verizon3G1xEV-DO-Uplink.pdf">
+  <metadata
+     id="metadata4133">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview4131"
+     showgrid="false"
+     inkscape:zoom="0.91434343"
+     inkscape:cx="453.08219"
+     inkscape:cy="270.20548"
+     inkscape:window-x="558"
+     inkscape:window-y="889"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g3955"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <desc
+     id="desc3935">Produced by GNUPLOT 4.4 patchlevel 3 </desc>
+  <defs
+     id="defs3937">
+    <circle
+       id="gpDot"
+       r="0.5"
+       stroke-width="0.5" />
+    <path
+       id="gpPt0"
+       stroke-width="0.222"
+       stroke="currentColor"
+       d="M-1,0 h2 M0,-1 v2" />
+    <path
+       id="gpPt1"
+       stroke-width="0.222"
+       stroke="currentColor"
+       d="M-1,-1 L1,1 M1,-1 L-1,1" />
+    <path
+       id="gpPt2"
+       stroke-width="0.222"
+       stroke="currentColor"
+       d="M-1,0 L1,0 M0,-1 L0,1 M-1,-1 L1,1 M-1,1 L1,-1" />
+    <rect
+       id="gpPt3"
+       stroke-width="0.222"
+       stroke="currentColor"
+       x="-1"
+       y="-1"
+       width="2"
+       height="2" />
+    <rect
+       id="gpPt4"
+       stroke-width="0.222"
+       stroke="currentColor"
+       fill="currentColor"
+       x="-1"
+       y="-1"
+       width="2"
+       height="2" />
+    <circle
+       id="gpPt5"
+       stroke-width="0.222"
+       stroke="currentColor"
+       cx="0"
+       cy="0"
+       r="1" />
+    <use
+       xlink:href="#gpPt5"
+       id="gpPt6"
+       fill="currentColor"
+       stroke="none" />
+    <path
+       id="gpPt7"
+       stroke-width="0.222"
+       stroke="currentColor"
+       d="M0,-1.33 L-1.33,0.67 L1.33,0.67 z" />
+    <use
+       xlink:href="#gpPt7"
+       id="gpPt8"
+       fill="currentColor"
+       stroke="none" />
+    <use
+       xlink:href="#gpPt7"
+       id="gpPt9"
+       stroke="currentColor"
+       transform="rotate(180)" />
+    <use
+       xlink:href="#gpPt9"
+       id="gpPt10"
+       fill="currentColor"
+       stroke="none" />
+    <use
+       xlink:href="#gpPt3"
+       id="gpPt11"
+       stroke="currentColor"
+       transform="rotate(45)" />
+    <use
+       xlink:href="#gpPt11"
+       id="gpPt12"
+       fill="currentColor"
+       stroke="none" />
+  </defs>
+  <g
+     style="fill:none; color:white; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+     id="g3953" />
+  <g
+     style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+     id="g3955">
+    <path
+       d="M71.9,355.5 L80.9,355.5 M575.0,355.5 L566.0,355.5 "
+       id="path3957" />
+    <g
+       transform="translate(63.6,360.0)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g3959">
+      <text
+         xml:space="preserve"
+         id="text3961">   0</text>
+    </g>
+    <path
+       d="M71.9,326.6 L80.9,326.6 M575.0,326.6 L566.0,326.6 "
+       id="path3963" />
+    <g
+       transform="translate(63.6,331.1)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g3965">
+      <text
+         xml:space="preserve"
+         id="text3967">  50</text>
+    </g>
+    <path
+       d="M71.9,297.7 L80.9,297.7 M575.0,297.7 L566.0,297.7 "
+       id="path3969" />
+    <g
+       transform="translate(63.6,302.2)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g3971">
+      <text
+         id="text3973"> 100</text>
+    </g>
+    <path
+       d="M71.9,268.8 L80.9,268.8 M575.0,268.8 L566.0,268.8 "
+       id="path3975" />
+    <g
+       transform="translate(63.6,273.3)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g3977">
+      <text
+         id="text3979"> 150</text>
+    </g>
+    <path
+       d="M71.9,239.9 L80.9,239.9 M575.0,239.9 L566.0,239.9 "
+       id="path3981" />
+    <g
+       transform="translate(63.6,244.4)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g3983">
+      <text
+         id="text3985"> 200</text>
+    </g>
+    <path
+       d="M71.9,211.0 L80.9,211.0 M575.0,211.0 L566.0,211.0 "
+       id="path3987" />
+    <g
+       transform="translate(63.6,215.5)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g3989">
+      <text
+         id="text3991"> 250</text>
+    </g>
+    <path
+       d="M71.9,182.1 L80.9,182.1 M575.0,182.1 L566.0,182.1 "
+       id="path3993" />
+    <g
+       transform="translate(63.6,186.6)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g3995">
+      <text
+         id="text3997"> 300</text>
+    </g>
+    <path
+       d="M71.9,153.2 L80.9,153.2 M575.0,153.2 L566.0,153.2 "
+       id="path3999" />
+    <g
+       transform="translate(63.6,157.7)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g4001">
+      <text
+         id="text4003"> 350</text>
+    </g>
+    <path
+       d="M71.9,124.3 L80.9,124.3 M575.0,124.3 L566.0,124.3 "
+       id="path4005" />
+    <g
+       transform="translate(63.6,128.8)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g4007">
+      <text
+         id="text4009"> 400</text>
+    </g>
+    <path
+       d="M71.9,95.4 L80.9,95.4 M575.0,95.4 L566.0,95.4 "
+       id="path4011" />
+    <g
+       transform="translate(63.6,99.9)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g4013">
+      <text
+         id="text4015"> 450</text>
+    </g>
+    <path
+       d="M555.8,355.5 L555.8,346.5 M555.8,83.6 L555.8,92.6 "
+       id="path4017" />
+    <g
+       transform="translate(555.8,378.0)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g4019">
+      <text
+         id="text4021"> 200</text>
+    </g>
+    <path
+       d="M509.3,355.5 L509.3,346.5 M509.3,83.6 L509.3,92.6 "
+       id="path4023" />
+    <g
+       transform="translate(509.3,378.0)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g4025">
+      <text
+         id="text4027"> 300</text>
+    </g>
+    <path
+       d="M450.7,355.5 L450.7,346.5 M450.7,83.6 L450.7,92.6 "
+       id="path4029" />
+    <g
+       transform="translate(450.7,378.0)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g4031">
+      <text
+         id="text4033"> 500</text>
+    </g>
+    <path
+       d="M371.3,355.5 L371.3,346.5 M371.3,83.6 L371.3,92.6 "
+       id="path4035" />
+    <g
+       transform="translate(371.3,378.0)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g4037">
+      <text
+         id="text4039"> 1000</text>
+    </g>
+    <path
+       d="M291.8,355.5 L291.8,346.5 M291.8,83.6 L291.8,92.6 "
+       id="path4041" />
+    <g
+       transform="translate(291.8,378.0)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g4043">
+      <text
+         id="text4045"> 2000</text>
+    </g>
+    <path
+       d="M245.3,355.5 L245.3,346.5 M245.3,83.6 L245.3,92.6 "
+       id="path4047" />
+    <g
+       transform="translate(245.3,378.0)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g4049">
+      <text
+         id="text4051"> 3000</text>
+    </g>
+    <path
+       d="M186.8,355.5 L186.8,346.5 M186.8,83.6 L186.8,92.6 "
+       id="path4053" />
+    <g
+       transform="translate(186.8,378.0)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g4055">
+      <text
+         id="text4057"> 5000</text>
+    </g>
+    <path
+       d="M107.3,355.5 L107.3,346.5 M107.3,83.6 L107.3,92.6 "
+       id="path4059" />
+    <g
+       transform="translate(107.3,378.0)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g4061">
+      <text
+         id="text4063"> 10000</text>
+    </g>
+    <path
+       d="M71.9,83.6 L71.9,355.5 L575.0,355.5 L575.0,83.6 L71.9,83.6 Z "
+       id="path4065" />
+    <g
+       transform="translate(17.6,219.6) rotate(270)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g4067">
+      <text
+         id="text4069">Throughput (kbps)</text>
+    </g>
+    <g
+       transform="translate(323.4,405.0)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g4071">
+      <text
+         id="text4073">Self-inflicted delay (ms)</text>
+    </g>
+    <g
+       transform="translate(349.9,110.5)"
+       style="font-size:15px;text-anchor:start;fill:#008000;stroke:none;font-family:Arial"
+       id="g4075">
+      <text
+         id="text4077">\color{ForestGreen}LEDBAT</text>
+    </g>
+    <use
+       xlink:href="#gpPt1"
+       transform="translate(345.4,96.5) scale(4.50)"
+       color="green"
+       id="use4079" />
+    <g
+       transform="translate(298.6,230.6)"
+       style="stroke:none; fill:red; font-family:Arial; font-size:12.00pt; text-anchor:start"
+       id="g4081">
+      <text
+         id="text4083">\color{red}Hangout</text>
+    </g>
+    <use
+       xlink:href="#gpPt0"
+       transform="translate(294.1,230.6) scale(4.50)"
+       color="red"
+       id="use4085" />
+    <g
+       transform="translate(205.7,151.5)"
+       style="stroke:none; fill:red; font-family:Arial; font-size:12.00pt; text-anchor:start"
+       id="g4087">
+      <text
+         id="text4089">\color{red}Skype</text>
+    </g>
+    <use
+       xlink:href="#gpPt0"
+       transform="translate(201.2,151.5) scale(4.50)"
+       color="red"
+       id="use4091" />
+    <g
+       transform="translate(226.9,177.5)"
+       style="stroke:none; fill:red; font-family:Arial; font-size:12.00pt; text-anchor:start"
+       id="g4093">
+      <text
+         id="text4095">\color{red}Facetime</text>
+    </g>
+    <use
+       xlink:href="#gpPt0"
+       transform="translate(222.4,177.5) scale(4.50)"
+       color="red"
+       id="use4097" />
+    <g
+       transform="translate(376.5,185.6)"
+       style="stroke:none; fill:green; font-family:Arial; font-size:12.00pt; text-anchor:start"
+       id="g4099">
+      <text
+         id="text4101">\color{ForestGreen}TCP Vegas</text>
+    </g>
+    <use
+       xlink:href="#gpPt1"
+       transform="translate(372.0,185.6) scale(4.50)"
+       color="green"
+       id="use4103" />
+    <g
+       transform="translate(500.9,239.4)"
+       style="font-size:15px;text-anchor:start;fill:#0000ff;stroke:none;font-family:Arial"
+       id="g4105">
+      <text
+         id="text4107">\color{blue}Alfalfa</text>
+    </g>
+    <use
+       xlink:href="#gpPt2"
+       transform="translate(556.4,225.4) scale(4.50)"
+       color="blue"
+       id="use4109" />
+    <g
+       transform="translate(405.0,213.3)"
+       style="stroke:none; fill:green; font-family:Arial; font-size:12.00pt; text-anchor:start"
+       id="g4111">
+      <text
+         id="text4113">\color{ForestGreen}Compound TCP</text>
+    </g>
+    <use
+       xlink:href="#gpPt1"
+       transform="translate(400.5,213.3) scale(4.50)"
+       color="green"
+       id="use4115" />
+    <g
+       transform="translate(87.3,264.8)"
+       style="stroke:none; fill:green; font-family:Arial; font-size:12.00pt; text-anchor:start"
+       id="g4117">
+      <text
+         id="text4119">\color{ForestGreen}Linux TCP</text>
+    </g>
+    <use
+       xlink:href="#gpPt1"
+       transform="translate(82.8,264.8) scale(4.50)"
+       color="green"
+       id="use4121" />
+  </g>
+  <a
+     xlink:title="Plot #1"
+     id="a4123">
+    <g
+       style="fill:none; color:red; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g4125" />
+  </a>
+  <g
+     style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+     id="g4127">
+    <path
+       d="M71.9,83.6 L71.9,355.5 L575.0,355.5 L575.0,83.6 L71.9,83.6 Z "
+       id="path4129" />
+  </g>
+</svg>

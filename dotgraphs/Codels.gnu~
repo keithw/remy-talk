@@ -1,0 +1,17 @@
+set terminal svg solid
+set output "Codels.svg"
+set logscale x
+unset label
+set xlabel "Self-inflicted delay (ms)"
+set ylabel "Utilization (percent)"
+set xtics (10, 20, 30, 50, 100, 200, 300, 500, 1000, 2000, 3000, 5000, 10000, 20000, 30000)
+set ytics format "% 4.0f"
+set size ratio 1.0/1.85
+set label "\\color{blue}Alfalfa" at 317, 42.1 textcolor lt 3 point pt 3 lc 3
+set label "\\color{blue}Alfalfa-EWMA" at 525, 79.7 textcolor lt 3 point pt 3 lc 3
+set label "\\color{ForestGreen}Linux TCP" at 25164, 55.7 textcolor lt 2 point pt 2 lc 2
+set label "\\color{ForestGreen}Linux TCP-over-CoDel" at 497, 61.1 textcolor lt 2 point pt 2 lc 2
+set yrange [ 0 : 100 ]
+set xrange [ 300 : 30000 ]
+plot "empty.txt"
+set output

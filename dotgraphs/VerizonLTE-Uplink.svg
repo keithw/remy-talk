@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600"
+   height="480"
+   viewBox="0 0 600 480"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="VerizonLTE-Uplink.pdf">
+  <metadata
+     id="metadata184">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1298"
+     inkscape:window-height="978"
+     id="namedview182"
+     showgrid="false"
+     inkscape:zoom="1.9036296"
+     inkscape:cx="439.23542"
+     inkscape:cy="252.88095"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g24" />
+  <desc
+     id="desc4">Produced by GNUPLOT 4.4 patchlevel 3 </desc>
+  <defs
+     id="defs6">
+    <circle
+       id="gpDot"
+       r="0.5"
+       stroke-width="0.5" />
+    <path
+       id="gpPt0"
+       stroke-width="0.222"
+       stroke="currentColor"
+       d="M-1,0 h2 M0,-1 v2" />
+    <path
+       id="gpPt1"
+       stroke-width="0.222"
+       stroke="currentColor"
+       d="M-1,-1 L1,1 M1,-1 L-1,1" />
+    <path
+       id="gpPt2"
+       stroke-width="0.222"
+       stroke="currentColor"
+       d="M-1,0 L1,0 M0,-1 L0,1 M-1,-1 L1,1 M-1,1 L1,-1" />
+    <rect
+       id="gpPt3"
+       stroke-width="0.222"
+       stroke="currentColor"
+       x="-1"
+       y="-1"
+       width="2"
+       height="2" />
+    <rect
+       id="gpPt4"
+       stroke-width="0.222"
+       stroke="currentColor"
+       fill="currentColor"
+       x="-1"
+       y="-1"
+       width="2"
+       height="2" />
+    <circle
+       id="gpPt5"
+       stroke-width="0.222"
+       stroke="currentColor"
+       cx="0"
+       cy="0"
+       r="1" />
+    <use
+       xlink:href="#gpPt5"
+       id="gpPt6"
+       fill="currentColor"
+       stroke="none" />
+    <path
+       id="gpPt7"
+       stroke-width="0.222"
+       stroke="currentColor"
+       d="M0,-1.33 L-1.33,0.67 L1.33,0.67 z" />
+    <use
+       xlink:href="#gpPt7"
+       id="gpPt8"
+       fill="currentColor"
+       stroke="none" />
+    <use
+       xlink:href="#gpPt7"
+       id="gpPt9"
+       stroke="currentColor"
+       transform="rotate(180)" />
+    <use
+       xlink:href="#gpPt9"
+       id="gpPt10"
+       fill="currentColor"
+       stroke="none" />
+    <use
+       xlink:href="#gpPt3"
+       id="gpPt11"
+       stroke="currentColor"
+       transform="rotate(45)" />
+    <use
+       xlink:href="#gpPt11"
+       id="gpPt12"
+       fill="currentColor"
+       stroke="none" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5617"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+  </defs>
+  <g
+     style="fill:none; color:white; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+     id="g22" />
+  <g
+     style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+     id="g24">
+    <path
+       d="M80.2,353.3 L89.2,353.3 M575.0,353.3 L566.0,353.3 "
+       id="path26" />
+    <g
+       transform="translate(71.9,357.8)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g28">
+      <text
+         xml:space="preserve"
+         id="text30">   0</text>
+    </g>
+    <path
+       d="M80.2,317.3 L89.2,317.3 M575.0,317.3 L566.0,317.3 "
+       id="path32" />
+    <g
+       transform="translate(71.9,321.8)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g34">
+      <text
+         id="text36"> 500</text>
+    </g>
+    <path
+       d="M80.2,281.3 L89.2,281.3 M575.0,281.3 L566.0,281.3 "
+       id="path38" />
+    <g
+       transform="translate(71.9,285.8)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g40">
+      <text
+         id="text42"> 1000</text>
+    </g>
+    <path
+       d="M80.2,245.4 L89.2,245.4 M575.0,245.4 L566.0,245.4 "
+       id="path44" />
+    <g
+       transform="translate(71.9,249.9)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g46">
+      <text
+         id="text48"> 1500</text>
+    </g>
+    <path
+       d="M80.2,209.4 L89.2,209.4 M575.0,209.4 L566.0,209.4 "
+       id="path50" />
+    <g
+       transform="translate(71.9,213.9)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g52">
+      <text
+         id="text54"> 2000</text>
+    </g>
+    <path
+       d="M80.2,173.4 L89.2,173.4 M575.0,173.4 L566.0,173.4 "
+       id="path56" />
+    <g
+       transform="translate(71.9,177.9)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g58">
+      <text
+         id="text60"> 2500</text>
+    </g>
+    <path
+       d="M80.2,137.4 L89.2,137.4 M575.0,137.4 L566.0,137.4 "
+       id="path62" />
+    <g
+       transform="translate(71.9,141.9)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g64">
+      <text
+         id="text66"> 3000</text>
+    </g>
+    <path
+       d="M80.2,101.4 L89.2,101.4 M575.0,101.4 L566.0,101.4 "
+       id="path68" />
+    <g
+       transform="translate(71.9,105.9)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end"
+       id="g70">
+      <text
+         id="text72"> 3500</text>
+    </g>
+    <path
+       d="M567.3,353.3 L567.3,344.3 M567.3,85.8 L567.3,94.8 "
+       id="path74" />
+    <g
+       transform="translate(567.3,375.8)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g76">
+      <text
+         id="text78"> 300</text>
+    </g>
+    <path
+       d="M503.0,353.3 L503.0,344.3 M503.0,85.8 L503.0,94.8 "
+       id="path80" />
+    <g
+       transform="translate(503.0,375.8)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g82">
+      <text
+         id="text84"> 500</text>
+    </g>
+    <path
+       d="M415.7,353.3 L415.7,344.3 M415.7,85.8 L415.7,94.8 "
+       id="path86" />
+    <g
+       transform="translate(415.7,375.8)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g88">
+      <text
+         id="text90"> 1000</text>
+    </g>
+    <path
+       d="M328.4,353.3 L328.4,344.3 M328.4,85.8 L328.4,94.8 "
+       id="path92" />
+    <g
+       transform="translate(328.4,375.8)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g94">
+      <text
+         id="text96"> 2000</text>
+    </g>
+    <path
+       d="M277.4,353.3 L277.4,344.3 M277.4,85.8 L277.4,94.8 "
+       id="path98" />
+    <g
+       transform="translate(277.4,375.8)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g100">
+      <text
+         id="text102"> 3000</text>
+    </g>
+    <path
+       d="M213.1,353.3 L213.1,344.3 M213.1,85.8 L213.1,94.8 "
+       id="path104" />
+    <g
+       transform="translate(213.1,375.8)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g106">
+      <text
+         id="text108"> 5000</text>
+    </g>
+    <path
+       d="M125.8,353.3 L125.8,344.3 M125.8,85.8 L125.8,94.8 "
+       id="path110" />
+    <g
+       transform="translate(125.8,375.8)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g112">
+      <text
+         id="text114"> 10000</text>
+    </g>
+    <path
+       d="M80.2,85.8 L80.2,353.3 L575.0,353.3 L575.0,85.8 L80.2,85.8 Z "
+       id="path116" />
+    <g
+       transform="translate(17.6,219.6) rotate(270)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g118">
+      <text
+         id="text120">Throughput (kbps)</text>
+    </g>
+    <g
+       transform="translate(327.6,402.8)"
+       style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle"
+       id="g122">
+      <text
+         id="text124">Self-inflicted delay (ms)</text>
+    </g>
+    <g
+       transform="translate(469.7,146.0)"
+       style="stroke:none; fill:green; font-family:Arial; font-size:12.00pt; text-anchor:start"
+       id="g126">
+      <text
+         id="text128">\color{ForestGreen}LEDBAT</text>
+    </g>
+    <use
+       xlink:href="#gpPt1"
+       transform="translate(465.2,146.0) scale(4.50)"
+       color="green"
+       id="use130" />
+    <g
+       transform="translate(287.8,331.7)"
+       style="stroke:none; fill:red; font-family:Arial; font-size:12.00pt; text-anchor:start"
+       id="g132">
+      <text
+         id="text134">\color{red}Hangout</text>
+    </g>
+    <use
+       xlink:href="#gpPt0"
+       transform="translate(283.3,331.7) scale(4.50)"
+       color="red"
+       id="use136" />
+    <g
+       transform="translate(182.2,286.4)"
+       style="stroke:none; fill:red; font-family:Arial; font-size:12.00pt; text-anchor:start"
+       id="g138">
+      <text
+         id="text140">\color{red}Skype</text>
+    </g>
+    <use
+       xlink:href="#gpPt0"
+       transform="translate(177.7,286.4) scale(4.50)"
+       color="red"
+       id="use142" />
+    <g
+       transform="translate(263.6,285.3)"
+       style="stroke:none; fill:red; font-family:Arial; font-size:12.00pt; text-anchor:start"
+       id="g144">
+      <text
+         id="text146">\color{red}Facetime</text>
+    </g>
+    <use
+       xlink:href="#gpPt0"
+       transform="translate(259.1,285.3) scale(4.50)"
+       color="red"
+       id="use148" />
+    <g
+       transform="translate(460.7,171.9)"
+       style="stroke:none; fill:green; font-family:Arial; font-size:12.00pt; text-anchor:start"
+       id="g150">
+      <text
+         id="text152">\color{ForestGreen}TCP Vegas</text>
+    </g>
+    <use
+       xlink:href="#gpPt1"
+       transform="translate(456.2,171.9) scale(4.50)"
+       color="green"
+       id="use154" />
+    <g
+       transform="translate(521,116.5)"
+       style="font-size:15px;text-anchor:start;fill:#0000ff;stroke:none;font-family:Arial"
+       id="g156">
+      <text
+         id="text158">\color{blue}Alfalfa</text>
+    </g>
+    <use
+       xlink:href="#gpPt2"
+       transform="translate(554.5,98.5) scale(4.50)"
+       color="blue"
+       id="use160" />
+    <g
+       transform="translate(347.8,215.4)"
+       style="stroke:none; fill:green; font-family:Arial; font-size:12.00pt; text-anchor:start"
+       id="g162">
+      <text
+         id="text164">\color{ForestGreen}Compound TCP</text>
+    </g>
+    <use
+       xlink:href="#gpPt1"
+       transform="translate(343.3,215.4) scale(4.50)"
+       color="green"
+       id="use166" />
+    <g
+       transform="translate(96.7,257.3)"
+       style="stroke:none; fill:green; font-family:Arial; font-size:12.00pt; text-anchor:start"
+       id="g168">
+      <text
+         id="text170">\color{ForestGreen}Linux TCP</text>
+    </g>
+    <use
+       xlink:href="#gpPt1"
+       transform="translate(92.2,257.3) scale(4.50)"
+       color="green"
+       id="use172" />
+  </g>
+  <a
+     xlink:title="Plot #1"
+     id="a174">
+    <g
+       style="fill:none; color:red; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+       id="g176" />
+  </a>
+  <g
+     style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter"
+     id="g178">
+    <path
+       d="M80.2,85.8 L80.2,353.3 L575.0,353.3 L575.0,85.8 L80.2,85.8 Z "
+       id="path180" />
+  </g>
+  <g
+     id="g6418"
+     transform="matrix(0.96540097,0.26076993,-0.26076993,0.96540097,171.88169,-47.225333)">
+    <path
+       inkscape:connector-curvature="0"
+       id="path4836"
+       d="m 124.33586,256.72026 82.18275,-81.44728"
+       style="fill:none;stroke:#000000;stroke-width:2.31347013;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.31347008, 2.31347008;stroke-dashoffset:0;marker-start:none;marker-end:url(#Arrow1Lend)" />
+    <text
+       transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
+       sodipodi:linespacing="100%"
+       id="text4838"
+       y="261.14166"
+       x="-93.377274"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       xml:space="preserve"><tspan
+         y="261.14166"
+         x="-93.377274"
+         id="tspan4840"
+         sodipodi:role="line">Better</tspan></text>
+  </g>
+</svg>

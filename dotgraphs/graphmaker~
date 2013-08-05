@@ -1,0 +1,118 @@
+#!/usr/bin/perl -w
+
+use strict;
+use Data::Dumper;
+
+open DATA, "raw.csv";
+
+my @headers = split /,/, <DATA>;
+for ( @headers ) { s{"}{}g };
+
+<DATA>; # version numbers
+
+my $service = undef;
+my $direction = undef;
+my $quantity = undef;
+
+my %result;
+
+while ( <DATA> ) {
+  chomp;
+  if ( $_ =~ m{^,} ) {
+    $_ = "x$_\n";
+  }
+
+  my @field = split /,/;
+
+  for ( @field ) { s{"}{}g };
+
+  if ( $field[ 0 ] eq 'x' ) {
+    $field[ 0 ] = "";
+  }
+
+  # update service
+  if ( $field[ 0 ] =~ m{\w} ) {
+    $service = $field[ 0 ];
+  }
+
+  if ( $field[ 1 ] =~ m{\w} ) {
+    $direction = $field[ 1 ];
+  }
+
+  if ( $field[ 2 ] =~ m{\w} ) {
+    $quantity = $field[ 2 ];
+  }
+
+  my @important_fields = (6 .. 12);
+
+  if ( $field[ 10 ] !~ m{\w} ) {
+    next;
+  }
+
+  for my $column ( @important_fields ) {
+    my $program = $headers[ $column ];
+
+    $result{ $service }{ $direction }{ $program }{ $quantity } = $field[ $column ];
+  }
+}
+
+# now make graphs
+
+for my $service ( keys %result ) {
+  for my $direction ( keys %{ $result{ $service } } ) {
+    my $filename = $service . "-" . $direction;
+    $filename =~ s{[\s()&]}{}g;
+    open DATA, ">$filename.gnu" or die "$!";
+
+    my $tmin = 10000000;
+    my $tmax = 0;
+    my $dmax = 0;
+
+    print DATA qq{set terminal svg solid\n};
+    print DATA qq{set output "$filename.svg"\n};
+    print DATA qq{set title "$service $direction"\n};
+    print DATA qq{unset label\n};
+    print DATA q{set xlabel "Self-inflicted delay (ms)"} . "\n";
+    print DATA q{set ylabel "Bit rate (kbps)"} . "\n";
+
+    my $str = qq{set xtics ("0" 0};
+
+    for ( 1 .. 20 ) {
+      my $delay = $_ * 500;
+      $str .= qq{, "$delay" -$delay};
+    }
+
+    $str .= qq{)\n};
+
+    print DATA "$str\n";
+
+    for my $program ( keys %{ $result{ $service }{ $direction } } ) {
+      my $tput = $result{ $service }{ $direction }{ $program }{ "Throughput" };
+      my $delay = $result{ $service }{ $direction }{ $program }{ "Self-inflicted delay" };
+
+      my $style = 1;
+      if ( $program =~ m{Vegas|LEDBAT|Compound} ) {
+	$style = 2;
+      } elsif ( $program =~ m{Skype|Hangout|Facetime} ) {
+	$style = 3;
+      }
+
+      print DATA qq{set label "$program" at -$delay, $tput textcolor lt $style point pt $style lc $style\n};
+
+      if ( $tput > $tmax ) { $tmax = $tput }
+      if ( $tput < $tmin ) { $tmin = $tput }
+      if ( $delay > $dmax ) { $dmax = $delay }
+    }
+
+    $tmin *= .95;
+    $tmax *= 1.05;
+    $dmax *= 1.05;
+
+    print DATA qq{set yrange [ 0 : $tmax ]\n};
+    print DATA qq{set xrange [ -$dmax : 0 ]\n};
+    print DATA qq{plot "empty.txt"\n};
+    print DATA qq{set output\n};
+
+    close DATA or die "$!";
+  }
+}

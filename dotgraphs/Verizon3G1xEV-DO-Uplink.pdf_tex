@@ -1,0 +1,82 @@
+%% Creator: Inkscape inkscape 0.48.3.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Verizon3G1xEV-DO-Uplink.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{480bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.8)%
+    \put(0,0){\includegraphics[width=\unitlength]{Verizon3G1xEV-DO-Uplink.pdf}}%
+    \put(0.106,0.2){\makebox(0,0)[rb]{\smash{   0}}}%
+    \put(0.106,0.24816667){\makebox(0,0)[rb]{\smash{  50}}}%
+    \put(0.106,0.29633333){\makebox(0,0)[rb]{\smash{100}}}%
+    \put(0.106,0.3445){\makebox(0,0)[rb]{\smash{150}}}%
+    \put(0.106,0.39266667){\makebox(0,0)[rb]{\smash{200}}}%
+    \put(0.106,0.44083333){\makebox(0,0)[rb]{\smash{250}}}%
+    \put(0.106,0.489){\makebox(0,0)[rb]{\smash{300}}}%
+    \put(0.106,0.53716667){\makebox(0,0)[rb]{\smash{350}}}%
+    \put(0.106,0.58533333){\makebox(0,0)[rb]{\smash{400}}}%
+    \put(0.106,0.6335){\makebox(0,0)[rb]{\smash{450}}}%
+    \put(0.92633333,0.17){\makebox(0,0)[b]{\smash{200}}}%
+    \put(0.84883333,0.17){\makebox(0,0)[b]{\smash{300}}}%
+    \put(0.75116667,0.17){\makebox(0,0)[b]{\smash{500}}}%
+    \put(0.61883333,0.17){\makebox(0,0)[b]{\smash{1000}}}%
+    \put(0.48633333,0.17){\makebox(0,0)[b]{\smash{2000}}}%
+    \put(0.40883333,0.17){\makebox(0,0)[b]{\smash{3000}}}%
+    \put(0.31133333,0.17){\makebox(0,0)[b]{\smash{5000}}}%
+    \put(0.17883333,0.17){\makebox(0,0)[b]{\smash{10000}}}%
+    \put(0.02933333,0.434){\rotatebox{90}{\makebox(0,0)[b]{\smash{Throughput (kbps)}}}}%
+    \put(0.539,0.125){\makebox(0,0)[b]{\smash{Self-inflicted delay (ms)}}}%
+    \put(0.58316667,0.61583333){\makebox(0,0)[lb]{\smash{\color{ForestGreen}LEDBAT}}}%
+    \put(0.49766667,0.41566667){\makebox(0,0)[lb]{\smash{\color{red}Hangout}}}%
+    \put(0.34283333,0.5475){\makebox(0,0)[lb]{\smash{\color{red}Skype}}}%
+    \put(0.37816667,0.50416667){\makebox(0,0)[lb]{\smash{\color{red}Facetime}}}%
+    \put(0.6275,0.49066667){\makebox(0,0)[lb]{\smash{\color{ForestGreen}TCP Vegas}}}%
+    \put(0.83483333,0.401){\makebox(0,0)[lb]{\smash{\color{blue}Sprout}}}%
+    \put(0.675,0.4445){\makebox(0,0)[lb]{\smash{\color{ForestGreen}Compound TCP}}}%
+    \put(0.1455,0.35866667){\makebox(0,0)[lb]{\smash{\color{ForestGreen}Linux TCP}}}%
+  \end{picture}%
+\endgroup%
