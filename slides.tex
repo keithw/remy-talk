@@ -10,7 +10,7 @@
 \title{TCP ex Machina: \\Computer-Generated Congestion Control}
 
 \author{Keith~Winstein and Hari~Balakrishnan}
-\institute{MIT Computer Science and Artificial Intelligence Laboratory}
+\institute{MIT Computer Science and Artificial Intelligence Laboratory\\\vspace{\baselineskip}\textcolor{DarkBlue}{http://web.mit.edu/remy}}
 \date{August 14, 2013}
 
 \begin{document}
@@ -20,6 +20,8 @@
 \titlepage
 
 \end{frame}
+
+\institute{MIT Computer Science and Artificial Intelligence Laboratory}
 
 \section{Introduction}
 
@@ -149,7 +151,7 @@
 \begin{itemize}
 \item Open lots of flows \hspace{1.9 cm} \only<2->{\includegraphics[width=0.5cm]{firefox.png} \hspace{0.001 cm} \includegraphics[width=0.5cm]{chrome-64.png} \hspace{0.001 cm} \includegraphics[width=0.5cm]{Internet_Explorer_10_logo.png} \hspace{0.02 cm} \includegraphics[width=0.5cm]{safari.jpg} \hspace{0.02 cm} \includegraphics[width=0.5cm]{mozilladino.png}}
 
-\item Turn off slow start \only<3->{\hspace{1.75 cm} \raisebox{-0.6ex}{\includegraphics[height=14 pt]{Google_Logo_Old.PNG}} \raisebox{-.125 ex}{\includegraphics[height=10 pt]{mslogo.png}}}
+\item Goose slow start \only<3->{\hspace{2.18 cm} \raisebox{-0.6ex}{\includegraphics[height=14 pt]{Google_Logo_Old.PNG}} \raisebox{-.125 ex}{\includegraphics[height=10 pt]{mslogo.png}}}
 
 \item Add pacing \hspace{3.3 cm} \only<4->{\raisebox{-.4 ex}{\includegraphics[height=14 pt]{youtube.png}}}
 
@@ -186,12 +188,13 @@
 \begin{frame}
 \frametitle{What we built}
 
+\colorbox{Bisque}{
 \begin{centering}
 \noindent \begin{tabular}{ll}
 \Large \textcolor{DarkRed}{\bf Remy}: & \Large a program that generates \\ & \Large congestion-control schemes offline
 \end{tabular}
 
-\end{centering}
+\end{centering}}
 
 \ssline
 \ssline
@@ -286,11 +289,13 @@ Maximize
 \end{minipage} \textsf{\textcolor{DarkBlue}{(proportionally fair throughput)}}
 
 \item
+\begin{minipage}{3.75 cm}
 \begin{tabular}{l}
-\only<2>{\cellcolor{CornflowerBlue}}\raisebox{0.75 cm}{\begin{minipage}{3.75 cm}
+\only<2>{\cellcolor{Bisque}}\raisebox{0.75 cm}{\begin{minipage}{3.75 cm}
 \[\sum_i \log \left[ \frac{\textsf{throughput}_i}{\textsf{delay}_i} \right]\]
 \end{minipage} \textsf{\textcolor{DarkBlue}{(proportionally fair throughput/delay)}}}
 \end{tabular}
+\end{minipage}
 
 \end{itemize}
 
@@ -316,7 +321,11 @@ Maximize
 \item Web browsing, MapReduce, videoconferencing
 \end{itemize}
 
-\item May be specific or not very informative
+\item May be \textcolor{Red}{specific} or \textcolor{DarkBlue}{not very informative} \\
+
+\vspace{4 pt}
+
+\tiny \hspace{1.6 cm} \textcolor{Red}{(E.g., XCP, pFabric)} \hspace{0.2 cm} \textcolor{DarkBlue}{(Tahoe, Reno, Cubic)}
 \end{itemize}
 
 \end{frame}
@@ -383,32 +392,30 @@ Maximize
 \item optimizes given objective over prior assumptions about network
 \end{itemize}
 
-\item \textbf{\textcolor{DarkBlue}{Approximates}} solution by paring down search
-
-\item Don't store full history
+\item \textbf{\textcolor{DarkBlue}{Approximates}} solution by limiting available state
 
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{A RemyCC stores three state variables}
+\frametitle{A RemyCC tracks three congestion signals}
 
 \Large
 
 \noindent \hspace{-0.75 cm}\begin{tabular}{ll}
-\textbf{\textcolor{DarkBlue}{r\_ewma}}: & moving average of interval between acks \\
+\textcolor{DarkBlue}{$r\_ewma$}: & moving average of interval between acks \\
 
-\textbf{\textcolor{DarkBlue}{s\_ewma}}: & \ldots between sender timestamps echoed in acks \\
+\textcolor{DarkBlue}{$s\_ewma$}: & \ldots between sender timestamps echoed in acks \\
 
-\textbf{\textcolor{DarkBlue}{rtt\_ratio}}: & ratio of last RTT to smallest RTT so far \\
+\textcolor{DarkBlue}{$rtt\_ratio$}: & ratio of last RTT to smallest RTT so far \\
 
 \end{tabular}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Why these three?}
+\frametitle{Why these three congestion signals?}
 
 \Large
 
@@ -428,9 +435,14 @@ Maximize
 \end{frame}
 
 \begin{frame}
-\frametitle{Each state mapped to an {\bf action}}
+\frametitle{A RemyCC maps each state to an action}
 
 \Large
+
+\[\textsc{Rule}( \textcolor{DarkBlue}{r\_ewma}, \textcolor{DarkBlue}{s\_ewma}, \textcolor{DarkBlue}{rtt\_ratio} ) \rightarrow \langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{r} \rangle \]
+
+\ssline
+\ssline
 
 \begin{tabular}{ll}
 
@@ -438,26 +450,26 @@ Maximize
 
 \textcolor{Red}{$b$} & Increment to congestion window \\
 
-\textcolor{Red}{$r$} & \textcolor{DarkBlue}{Minimum interval between two outgoing packets} \\
+\textcolor{Red}{$r$} & Minimum interval between two outgoing packets \\
 
 \end{tabular}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{RemyCC algorithm}
+\frametitle{A RemyCC at runtime}
 
 \large
 
-On ack:
+\textbf{On ack:}
 
 \begin{itemize}
-\item Update $\{\textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{r}\} \leftarrow \textbf{Rule}[ \textcolor{DarkBlue}{r\_ewma}, \textcolor{DarkBlue}{s\_ewma}, \textcolor{DarkBlue}{rtt\_ratio} ]$.
+\item $\langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{r}\rangle \leftarrow \textsc{Rule}( \textcolor{DarkBlue}{r\_ewma}, \textcolor{DarkBlue}{s\_ewma}, \textcolor{DarkBlue}{rtt\_ratio} )$
 
 \item $\texttt{cwnd} \leftarrow \textcolor{Red}{m} \cdot \texttt{cwnd} + \textcolor{Red}{b}$
 \end{itemize}
 
-Send packet if:
+\textbf{Send packet if:}
 
 \begin{itemize}
 \item $\texttt{cwnd} > \texttt{FlightSize}$, and
@@ -470,13 +482,13 @@ Send packet if:
 \begin{frame}
 \frametitle{Remy's job}
 
-Rules relate sections of state space to actions.
+\Large
 
-\begin{quote}
-The task: find best set of rules to maximize expected value of
-objective function.
+\colorbox{Bisque}{
+\begin{minipage}{\textwidth}
+Find piecewise-continuous \textsc{Rule}() that optimizes \\ expected value of objective function.
 
-\end{quote}
+\end{minipage}}
 
 \end{frame}
 
