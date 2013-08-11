@@ -268,7 +268,7 @@
 \begin{frame}
 \frametitle{Objectives of congestion control}
 
-Minimize
+\textbf{Minimize}
 
 \begin{itemize}
 \item average flow completion time
@@ -279,10 +279,13 @@ Minimize
 
 \end{itemize}
 
-Maximize
+\textbf{Maximize}
 
 \begin{itemize}
-\item max-min $\textsf{throughput}_i$
+
+\item \begin{minipage}{3.75 cm}
+$\min_i \textsf{throughput}_i$
+\end{minipage} \textsf{\textcolor{DarkBlue}{(max-min throughput)}}
 
 \item \begin{minipage}{3.75 cm}
 \[\sum_i \log \left[ \textsf{throughput}_i \right]\]
@@ -331,7 +334,7 @@ Maximize
 \end{frame}
 
 \begin{frame}
-\frametitle{This is a Dec-POMDP}
+\frametitle{Statement of the problem}
 
 \Large
 
@@ -342,6 +345,8 @@ Maximize
 \item Each sender only gets own receiver's acks
 
 \item Goal: \textbf{\textcolor{DarkBlue}{optimize expected value of objective}}
+
+%\item[] \normalsize $\Rightarrow$ decentralized partially-observable Markov decision process
 
 \end{itemize}
 
@@ -457,7 +462,7 @@ Maximize
 \end{frame}
 
 \begin{frame}
-\frametitle{A RemyCC at runtime}
+\frametitle{Runtime for a RemyCC}
 
 \large
 
