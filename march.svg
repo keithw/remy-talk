@@ -23,7 +23,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1412521"
-     inkscape:cx="526.61456"
+     inkscape:cx="528.36702"
      inkscape:cy="236.27502"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -88,8 +88,8 @@
     <path
        inkscape:connector-curvature="0"
        id="path2985"
-       d="m 42.883248,654.71751 932.617152,0"
-       style="fill:none;stroke:#000080;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#Arrow2Lendq)" />
+       d="m 42.883249,654.71751 931.710621,0"
+       style="fill:none;stroke:#000080;stroke-width:6.00000048;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#Arrow2Lendq)" />
     <rect
        style="fill:#ff8000;fill-opacity:0.50196078;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4222"
@@ -689,7 +689,7 @@
     </g>
     <g
        id="g5002"
-       transform="translate(75.104073,0)">
+       transform="translate(119.10407,0)">
       <rect
          y="567.75702"
          x="691.48334"
@@ -758,7 +758,7 @@
     </g>
     <g
        id="g5022"
-       transform="translate(90.686347,114.30261)">
+       transform="translate(91.562578,171.45389)">
       <rect
          y="396.30313"
          x="630.55347"
@@ -972,13 +972,13 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000080;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
-       x="729.76868"
+       x="761.76868"
        y="646.67438"
        id="text3992-3"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3994-1"
-         x="729.76868"
+         x="761.76868"
          y="646.67438"
          style="font-size:20px">2010s</tspan></text>
     <g
@@ -1010,7 +1010,7 @@
     </g>
     <g
        id="g5032-4"
-       transform="translate(25.14184,-114.30261)">
+       transform="translate(120.01807,-3.6523431e-7)">
       <rect
          y="510.60574"
          x="583.79333"
