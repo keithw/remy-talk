@@ -1,9 +1,9 @@
 DecBit (1990?)
 CARD (1989)
-VJCC (1988)
 DUAL (1991)
-Tahoe (?)
-Reno (1993?)
+Tahoe (1988?)
+kill VJCC
+Reno (1990)
 RED (1993) (*)
 BLUE (1992) (*)
 Vegas (1994)
