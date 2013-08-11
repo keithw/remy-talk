@@ -356,66 +356,114 @@ Maximize
 \end{minipage}
 }
 
-\end{centering}
-
 \ssline
 \ssline
 \ssline
 
 \pause
 
-\large \noindent \textcolor{DarkBlue}{\textbf{*} Given {\bf full history} of packets sent and acks received.}
+\end{centering}
+
+\Large \noindent \hspace{-.5cm} \mbox{\textcolor{DarkBlue}{\textbf{*} Given {\bf full history} of packets sent and acks received!}}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Simplifying the state}
+\frametitle{Remy: tractable search for the best}
 
 \section{Remy}
 
-Instead, keep limited state variables:
-
-\begin{enumerate}
-
-\item Moving average of interval between acknowledgements
-
-\item Moving average of interval between sender timestamps reflected in acks
-
-\item Ratio of latest RTT to smallest RTT seen so far
-
-\end{enumerate}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Why these three signals?}
+\large
 
 \begin{itemize}
 
-\item More signals increase search time.
+\item Remy searches for the best congestion-control algorithm
 
-\item We explored long-term averages, RTT, etc., but didn't help.
+\begin{itemize}
+\item optimizes given objective over prior assumptions about network
+\end{itemize}
 
-\item Other signals might help other networks!
+\item \textbf{\textcolor{DarkBlue}{Approximates}} solution by paring down search
 
-\item Benefit can be measured empirically.
+\item Don't store full history
 
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{The action}
+\frametitle{A RemyCC stores three state variables}
 
-\begin{enumerate}
+\Large
 
-\item Increment to congestion window
+\noindent \hspace{-0.75 cm}\begin{tabular}{ll}
+\textbf{\textcolor{DarkBlue}{r\_ewma}}: & moving average of interval between acks \\
 
-\item Multiple to congestion window
+\textbf{\textcolor{DarkBlue}{s\_ewma}}: & \ldots between sender timestamps echoed in acks \\
 
-\item Upper bound on rate of sending
+\textbf{\textcolor{DarkBlue}{rtt\_ratio}}: & ratio of last RTT to smallest RTT so far \\
 
-\end{enumerate}
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Why these three?}
+
+\Large
+
+\begin{itemize}
+
+\item Benefit can be measured empirically
+
+\begin{itemize}
+\item In our experiments, little help from adding more
+\item Other networks might find differently
+\end{itemize}
+
+\item More signals increase search time
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Each state mapped to an {\bf action}}
+
+\Large
+
+\begin{tabular}{ll}
+
+\textcolor{Red}{$m$} & Multiple to congestion window \\
+
+\textcolor{Red}{$b$} & Increment to congestion window \\
+
+\textcolor{Red}{$r$} & \textcolor{DarkBlue}{Minimum interval between two outgoing packets} \\
+
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{RemyCC algorithm}
+
+\large
+
+On ack:
+
+\begin{itemize}
+\item Update $\{\textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{r}\} \leftarrow \textbf{Rule}[ \textcolor{DarkBlue}{r\_ewma}, \textcolor{DarkBlue}{s\_ewma}, \textcolor{DarkBlue}{rtt\_ratio} ]$.
+
+\item $\texttt{cwnd} \leftarrow \textcolor{Red}{m} \cdot \texttt{cwnd} + \textcolor{Red}{b}$
+\end{itemize}
+
+Send packet if:
+
+\begin{itemize}
+\item $\texttt{cwnd} > \texttt{FlightSize}$, and
+
+\item last packet sent $> \textcolor{Red}{r}$ ago
+\end{itemize}
 
 \end{frame}
 
