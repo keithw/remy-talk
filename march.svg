@@ -23,10 +23,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1412521"
-     inkscape:cx="528.36702"
+     inkscape:cx="421.46689"
      inkscape:cy="236.27502"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g4867-5"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="719"
@@ -212,7 +212,8 @@
          y="601.72461"
          style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:FreeSans;-inkscape-font-specification:FreeSans">NewReno</tspan></text>
     <g
-       id="g4867">
+       id="g4867"
+       transform="translate(30,0)">
       <rect
          y="692.45068"
          x="107.69001"
@@ -1030,6 +1031,52 @@
            x="590.22961"
            id="tspan4226-8-8-7-4"
            sodipodi:role="line">LEDBAT</tspan></text>
+    </g>
+    <g
+       transform="translate(-68.177739,0)"
+       id="g4867-5">
+      <rect
+         y="692.45068"
+         x="107.69001"
+         height="45.343174"
+         width="81.438499"
+         id="rect4222-9-8-0-8"
+         style="fill:#00ff00;fill-opacity:0.50196078;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4224-23-1-0-6"
+         y="726.61029"
+         x="115.08326"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math"
+         xml:space="preserve"><tspan
+           style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+           y="726.61029"
+           x="115.08326"
+           id="tspan4226-8-8-9-6"
+           sodipodi:role="line">GPS</tspan></text>
+    </g>
+    <g
+       transform="translate(-50.118671,56.679016)"
+       id="g4867-5-2">
+      <rect
+         y="692.45068"
+         x="107.69001"
+         height="45.343174"
+         width="85.819656"
+         id="rect4222-9-8-0-8-3"
+         style="fill:#00ff00;fill-opacity:0.50196078;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4224-23-1-0-6-1"
+         y="726.03424"
+         x="113.86209"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math"
+         xml:space="preserve"><tspan
+           style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+           y="726.03424"
+           x="113.86209"
+           id="tspan4226-8-8-9-6-6"
+           sodipodi:role="line">WFQ</tspan></text>
     </g>
   </g>
 </svg>
