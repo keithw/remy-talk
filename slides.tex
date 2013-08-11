@@ -41,24 +41,22 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Congestion control (1980s)}
-\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march-4.pdf}
-\end{frame}
-\begin{frame}
-\frametitle{Congestion control (1990s)}
-\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march-3.pdf}
-\end{frame}
-\begin{frame}
-\frametitle{Congestion control (2000s)}
-\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march-2.pdf}
-\end{frame}
-\begin{frame}
-\frametitle{Congestion control (2010s)}
-\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march-1.pdf}
-\end{frame}
-\begin{frame}
-\frametitle{Congestion control (this SIGCOMM)}
-\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march.pdf}
+\frametitle{The march of congestion control mechanisms}
+\only<1>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march-4.pdf}
+
+}
+\only<2>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march-3.pdf}
+
+}
+\only<3>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march-2.pdf}
+
+}
+\only<4>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march-1.pdf}
+
+}
+\only<5>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march.pdf}
+
+}
 \end{frame}
 
 %\begin{frame}
@@ -121,7 +119,7 @@
 
 \item ``Teleology of TCP'' is mostly unknown
 
-\item Solutions for long-running flows only
+\item Asymptotic solutions for long-running flows
 
 \item Dynamical behavior is complex
 
@@ -137,8 +135,8 @@
 \begin{itemize}
 \item Mask stochastic loss
 \item Bufferbloat
-\item No multipath routing
 \item Mask out-of-order delivery
+\item No parallel/multipath routing
 \end{itemize}
 
 \end{frame}
@@ -149,13 +147,23 @@
 \Large
 
 \begin{itemize}
-\item Open lots of flows
-\item Application-layer pacing
+\item Open lots of flows \hspace{1.9 cm} \only<2->{\includegraphics[width=0.5cm]{firefox.png} \hspace{0.001 cm} \includegraphics[width=0.5cm]{chrome-64.png} \hspace{0.001 cm} \includegraphics[width=0.5cm]{Internet_Explorer_10_logo.png} \hspace{0.02 cm} \includegraphics[width=0.5cm]{safari.jpg} \hspace{0.02 cm} \includegraphics[width=0.5cm]{mozilladino.png}}
+
+\item Turn off slow start \only<3->{\hspace{1.75 cm} \raisebox{-0.6ex}{\includegraphics[height=14 pt]{Google_Logo_Old.PNG}} \raisebox{-.125 ex}{\includegraphics[height=10 pt]{mslogo.png}}}
+
+\item Add pacing \hspace{3.3 cm} \only<4->{\raisebox{-.4 ex}{\includegraphics[height=14 pt]{youtube.png}}}
+
 \item Give up and do it yourself
 
-\begin{itemize}
-\item Chrome (QUIC), Bittorrent ($\mu$TP), Mosh, Aspera
-\end{itemize}
+\visible<5>{
+\small
+\hspace{5.95 cm}\begin{minipage}{3.5 cm}
+{\bf Chrome} \textcolor{DarkBlue}{(QUIC)} \\
+{\bf BitTorrent} \textcolor{DarkBlue}{($\mu$TP)} \\
+{\bf Mosh} \textcolor{DarkBlue}{(SSP)} \\
+{\bf Aspera} \textcolor{DarkBlue}{(fasp)} \\
+\end{minipage}
+}
 
 \end{itemize}
 
@@ -164,12 +172,12 @@
 \begin{frame}
 \frametitle{Better: free the network to evolve}
 
-\Large Transport layer should adapt to \emph{whatever}:
+\Large Transport layer should adapt to \textbf{\textcolor{DarkBlue}{whatever}}:
 
 \begin{itemize}
-\item Network does
+\item network does
 
-\item Application wants
+\item application wants
 
 \end{itemize}
 
@@ -179,9 +187,9 @@
 \frametitle{What we built}
 
 \begin{centering}
-\fbox{\noindent \begin{tabular}{ll}
+\noindent \begin{tabular}{ll}
 \Large \textcolor{DarkRed}{\bf Remy}: & \Large a program that generates \\ & \Large congestion-control schemes offline
-\end{tabular}}
+\end{tabular}
 
 \end{centering}
 
@@ -191,12 +199,12 @@
 \textcolor{DarkBlue}{\bf Input:}
 
 \begin{itemize}
-\item Prior assumptions about the network
+\item Prior assumptions \hspace{3.01 cm} \textcolor{DarkBlue}{(what network may do)}
 
-\item Goal
+\item Goal \hspace{5.275 cm}\textcolor{DarkBlue}{(what app wants)}
 \end{itemize}
 
-\textcolor{DarkBlue}{\bf Output:} A congestion-control scheme (a RemyCC)
+\textcolor{DarkBlue}{\bf Output:} CC algorithm for a TCP sender \hspace{0.177 cm}\textcolor{DarkBlue}{(RemyCC)}
 
 \ssline
 
@@ -233,12 +241,58 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Remy: Start with goal, work backwards to algorithm}
+\frametitle{Dumbbell network}
 
-\begin{centering}
-\includegraphics[scale=.6]{remy.pdf}
+\only<1>{\noindent\includegraphics[width=\textwidth]{dumbbell-2.pdf}}\only<2>{\noindent\includegraphics[width=\textwidth]{dumbbell-1.pdf}}\only<3>{\noindent\includegraphics[width=\textwidth]{dumbbell.pdf}}
 
-\end{centering}
+\end{frame}
+
+%\begin{frame}
+%\frametitle{The goal}
+%
+%\Large
+%
+%\begin{itemize}
+%
+%\item Tradeoff between \textbf{efficiency} and \textbf{fairness}
+%
+%\item Tradeoff between \textbf{throughput} and \textbf{delay}
+%
+%\end{itemize}
+%
+%\end{frame}
+
+\begin{frame}
+\frametitle{Objectives of congestion control}
+
+Minimize
+
+\begin{itemize}
+\item average flow completion time
+
+\item page load time
+
+\item tail completion time
+
+\end{itemize}
+
+Maximize
+
+\begin{itemize}
+\item max-min $\textsf{throughput}_i$
+
+\item \begin{minipage}{3.75 cm}
+\[\sum_i \log \left[ \textsf{throughput}_i \right]\]
+\end{minipage} \textsf{\textcolor{DarkBlue}{(proportionally fair throughput)}}
+
+\item
+\begin{tabular}{l}
+\only<2>{\cellcolor{CornflowerBlue}}\raisebox{0.75 cm}{\begin{minipage}{3.75 cm}
+\[\sum_i \log \left[ \frac{\textsf{throughput}_i}{\textsf{delay}_i} \right]\]
+\end{minipage} \textsf{\textcolor{DarkBlue}{(proportionally fair throughput/delay)}}}
+\end{tabular}
+
+\end{itemize}
 
 \end{frame}
 
@@ -247,123 +301,77 @@
 
 \begin{itemize}
 
-\item Uncertain, stochastic model for the network
+\Large
+
+\item Model of network uncertainty
 
 \begin{itemize}
 \item Link speed distribution
 \item Delay distribution
-
 \end{itemize}
 
 \item Traffic model
 
 \begin{itemize}
-\item ``Conversation''-like (time-based)
-\item Datacenter-like workload
-\item Web browsing
+\item Web browsing, MapReduce, videoconferencing
 \end{itemize}
+
+\item May be specific or not very informative
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{This is a Dec-POMDP}
+
+\Large
+
+\begin{itemize}
+
+\item Endpoints have no control over routing
+
+\item Each sender only gets own receiver's acks
+
+\item Goal: \textbf{\textcolor{DarkBlue}{optimize expected value of objective}}
 
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Objective function}
+\frametitle{The intractable question of congestion control}
+
+\begin{centering}
+\fbox{
+\begin{minipage}{6 cm}
+\LARGE At this moment,\textcolor{DarkBlue}{\bf *} do I:
 
 \begin{itemize}
 
-\item Tradeoff between \textbf{throughput} and \textbf{delay}
-
-\item Tradeoff between \textbf{efficiency} and \textbf{fairness}
-
-\item Pareto-efficiency
+\item send a packet
+\item not send a packet?
 
 \end{itemize}
 
-\end{frame}
+\end{minipage}
+}
 
-\begin{frame}
-\frametitle{Alpha-fairness}
-
-$$U_{\alpha}(x) = \frac{x^{1-\alpha}}{1-\alpha}$$
-
-\begin{itemize}
-
-\item ``Most fair'' Pareto-efficient utility function
-
-\item $\alpha = 0$: efficiency only
-
-\item $\alpha = 2$: min.~potential delay fairness
-
-\item $\alpha \rightarrow \infty$: maximin fairness
-
-\item $\alpha \rightarrow 1$: proportional fairness ($\log(x)$)
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Objective}
-
-$$\log(\textrm{throughput}) - \delta \log(\textrm{delay})$$
-
-Other options:
-
-\begin{itemize}
-
-\item average flow completion time
-
-\item average transaction completion time
-
-\item 95th percentile transaction completion time
-
-\item \ldots
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{What is this problem?}
-
-\begin{itemize}
-
-\item Decentralized end-to-end algorithm
-
-\item Endpoints have no control over routing.
-
-\item Each sender only gets its own receiver's acknowledgements
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Optimal solution is intractable}
-
-\section{Remy}
-
-Arbitrary algorithm relates:
-
-\begin{itemize}
-
-\item Full history of acknowledgements
-
-\item Full history of packets sent
-
-\end{itemize}
-
-\ldots to decision about when to send the next packet.
+\end{centering}
 
 \ssline
+\ssline
+\ssline
 
-Search for algorithm is \textsc{nexp}-complete.
+\pause
+
+\large \noindent \textcolor{DarkBlue}{\textbf{*} Given {\bf full history} of packets sent and acks received.}
 
 \end{frame}
 
 \begin{frame}
 \frametitle{Simplifying the state}
+
+\section{Remy}
 
 Instead, keep limited state variables:
 
