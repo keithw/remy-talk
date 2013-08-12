@@ -77,6 +77,9 @@ LINE: while ( <> ) {
 
   print STDERR "Writing $num_whiskers whiskers to $filename... ";
 
+  my $boxes = "";
+  my $text = "";
+
   for ( @whiskers ) {
     my ( $lo_sewma, $lo_rewma, $hi_sewma, $hi_rewma, $usage, $incr, $mul, $r ) = parse_whisker( $_ );
     my $left_edge = transformx( $lo_sewma );
@@ -91,17 +94,32 @@ LINE: while ( <> ) {
     $usage = transformu( $usage );
 
     my $colorval = int( 255 - 255 * $usage );
+    $colorval = 0 if $colorval < 0;
+    $colorval = 255 if $colorval > 255;
 
-    my $texty = $height / 2 + 5;
-    my $textx = $width / 2;
+    my ( $red, $green, $blue ) = ( 255, $colorval, $colorval );
 
     $r = sprintf "%.1f", $r;
     $mul = sprintf "%.2f", $mul;
 
+    my $fs = $width / 8;
+
+    $fs = $height if ( $fs > $height );
+
+    my $texty = $height / 2 + $fs / 4;
+    my $textx = $width / 2;
+
+    $texty = 10000 if ( $texty >= 1000 );
+    $textx = 10000 if ( $textx >= 750 );
+
 #    print STDERR "graphing from x [$left_edge <=> $right_edge] y [$bottom_edge <=> $top_edge]\n";
 
-    print TARGET qq{<g transform="translate($left_edge,$top_edge)"><rect stroke-linejoin="round" stroke-dashoffset="0" height="$height" width="$width" stroke="#000" stroke-linecap="butt" stroke-dasharray="none" x="0" y="0" stroke-miterlimit="4" stroke-width="2" fill="rgb(255,$colorval,$colorval)"/><text style="letter-spacing:0px;word-spacing:0px;" font-family="FreeSans" xml:space="preserve" font-size="10px" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="normal" line-height="125%" fill="#000000"><tspan y="$texty" x="$textx" style="text-anchor:middle;text-align:center;">&lt;$mul,$incr,$r&gt;</tspan></text></g>};
+    $boxes .= qq{<g transform="translate($left_edge,$top_edge)"><rect stroke-linejoin="round" stroke-dashoffset="0" height="$height" width="$width" stroke="#000" stroke-linecap="butt" stroke-dasharray="none" x="0" y="0" stroke-miterlimit="4" stroke-width="2" fill="rgb($red,$green,$blue)"/></g>};
+
+    $text .= qq{<g transform="translate($left_edge,$top_edge)"><text style="letter-spacing:0px;word-spacing:0px;" font-family="FreeSans" xml:space="preserve" font-size="${fs}px" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="normal" line-height="125%" fill="#000000"><tspan y="$texty" x="$textx" style="text-anchor:middle;text-align:center;">&lt;$mul,$incr,$r&gt;</tspan></text></g>};
   }
+
+  print TARGET $boxes . $text;
 
   print TARGET q{</svg>};
 
