@@ -15,6 +15,8 @@ sub transformx {
 
   $x = 1024 if $x > 1024;
 
+  $x = 1024 * ($x ** 0.5) / (1024 ** 0.5);
+
   return $x
 }
 
@@ -24,6 +26,8 @@ sub transformy {
   $y *= 50;
 
   $y = 768 if $y > 768;
+
+  $y = 768 * ($y ** 0.5) / (768 ** 0.5);
 
   return $y;
 }
@@ -76,6 +80,10 @@ LINE: while ( <> ) {
     $hit_first = 1;
   }
 
+  if ( m{split} ) {
+    $hit_first = 0;
+  }
+
   my $filename = $filename_base . $num . q{.svg};
 
   open TARGET, ">$filename" or die "$!";
@@ -90,6 +98,9 @@ LINE: while ( <> ) {
 
   my $boxes = "";
   my $text = "";
+
+  my $topboxes = "";
+  my $toptext = "";
 
   for ( @whiskers ) {
     my ( $lo_sewma, $lo_rewma, $hi_sewma, $hi_rewma, $usage, $incr, $mul, $r ) = parse_whisker( $_ );
@@ -119,8 +130,18 @@ LINE: while ( <> ) {
 
     my ( $red, $green, $blue ) = ( 255, $colorval, $colorval );
 
+    my $edge_color = "rgb(0,0,0)";
+
+    my ( $boxvar, $textvar ) = ( \$boxes, \$text );
+
+    my $dasharray = "none";
+
     if ( $new_whisker ) {
-      ( $red, $green, $blue ) = ( 0, 0, 255 );
+      ( $red, $green, $blue ) = ( 64, 64, 192 );
+      $edge_color = "rgb(255,255,255)";
+      $boxvar = \$topboxes;
+      $textvar = \$toptext;
+      $dasharray = "3,4";
     }
 
     $r = sprintf "%.1f", $r;
@@ -138,12 +159,12 @@ LINE: while ( <> ) {
 
 #    print STDERR "graphing from x [$left_edge <=> $right_edge] y [$bottom_edge <=> $top_edge]\n";
 
-    $boxes .= qq{<g transform="translate($left_edge,$top_edge)"><rect stroke-linejoin="round" stroke-dashoffset="0" height="$height" width="$width" stroke="#000" stroke-linecap="butt" stroke-dasharray="none" x="0" y="0" stroke-miterlimit="4" stroke-width="2" fill="rgb($red,$green,$blue)"/></g>};
+    ${$boxvar} .= qq{<g transform="translate($left_edge,$top_edge)"><rect stroke-linejoin="round" stroke-dashoffset="0" height="$height" width="$width" stroke="$edge_color" stroke-linecap="butt" stroke-dasharray="$dasharray" x="0" y="0" stroke-miterlimit="4" stroke-width="3" fill="rgb($red,$green,$blue)"/></g>};
 
-    $text .= qq{<g transform="translate($left_edge,$top_edge)"><text style="letter-spacing:0px;word-spacing:0px;" font-family="FreeSans" xml:space="preserve" font-size="${fs}px" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="normal" line-height="125%" fill="#000000"><tspan y="$texty" x="$textx" style="text-anchor:middle;text-align:center;">&lt;$mul,$incr,$r&gt;</tspan></text></g>};
+    ${$textvar} .= qq{<g transform="translate($left_edge,$top_edge)"><text style="letter-spacing:0px;word-spacing:0px;" font-family="FreeSans" xml:space="preserve" font-size="${fs}px" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="normal" line-height="125%" fill="#000000"><tspan y="$texty" x="$textx" style="text-anchor:middle;text-align:center;">&lt;$mul,$incr,$r&gt;</tspan></text></g>};
   }
 
-  print TARGET $boxes . $text;
+  print TARGET $boxes . $topboxes . $text . $toptext;
 
   print TARGET q{</svg>};
 
