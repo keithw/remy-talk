@@ -503,7 +503,7 @@ Find piecewise-continuous \textsc{Rule}() that optimizes \\ expected value of ob
 \end{frame}
 
 \begin{frame}
-\frametitle{Simplified RemyCC}
+\frametitle{Remy example: Simplified RemyCC}
 
 \large
 
@@ -516,22 +516,33 @@ Find piecewise-continuous \textsc{Rule}() that optimizes \\ expected value of ob
 \end{frame}
 
 \begin{frame}
-\frametitle{Prior assumptions}
+\frametitle{Remy example: Prior assumptions}
 
 \large
 
-\begin{itemize}
-\item Link speed drawn uniformly on [10, 20] Mbps
+\begin{tabular}{llll}
+\bf Quantity & & \bf Distribution & \bf Units \\
 
-\item RTT drawn uniformly on [100, 200] ms
+\hline Link speed & & Uniform(10, 20) & Mbps \\
 
-\item $n$ drawn uniformly on [1, 16]
+RTT & & Uniform(100, 200) & ms \\
 
-\item ``On'' distribution: exponential time, mean = 5 seconds
+$n$ & & Uniform(1, 16) \\
 
-\item ``Off'' distribution: exponential time, mean = 5 seconds
+``On'' process & & $\mathrm{exp}[\mu = 5]$ & seconds \\
 
-\end{itemize}
+``Off'' process & & same \\
+
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Remy example: Objective}
+
+\LARGE
+
+\[\sum_i \log \left[ \frac{\textsf{throughput}_i}{\textsf{delay}_i} \right]\]
 
 \end{frame}
 

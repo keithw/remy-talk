@@ -17,6 +17,8 @@ sub transformx {
 
   $x = 1024 * ($x ** 0.5) / (1024 ** 0.5);
 
+  $x += 8;
+
   return $x
 }
 
@@ -28,6 +30,8 @@ sub transformy {
   $y = 768 if $y > 768;
 
   $y = 768 * ($y ** 0.5) / (768 ** 0.5);
+
+  $y += 8;
 
   return $y;
 }
@@ -96,7 +100,7 @@ LINE: while ( <> ) {
 
   open TARGET, ">$filename" or die "$!";
 
-  print TARGET q{<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="768" width="1024" version="1.1">};
+  print TARGET q{<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="784" width="1040" version="1.1">};
 
   my ( @whiskers ) = m{\[(.*?)\]}g;
 
@@ -144,14 +148,14 @@ LINE: while ( <> ) {
 
     my $dasharray = "none";
 
-    my $stroke_width = 5;
+    my $stroke_width = 6;
 
     if ( $new_whisker ) {
       ( $red, $green, $blue ) = ( 64, 64, 192 );
       $edge_color = "rgb(255,255,255)";
       $boxvar = \$topboxes;
       $textvar = \$toptext;
-      $stroke_width = "5";
+      $stroke_width = 6;
     }
 
     $r = sprintf "%.1f", $r;
