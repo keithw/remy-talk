@@ -571,36 +571,74 @@ $n$ & & Uniform(1, 16) \\
 \end{frame}
 
 \begin{frame}
-\frametitle{Fixed 15 Mbps link, 8 senders, flows exp-distributed}
+\frametitle{Scenario 1: fixed-rate network, homogenous senders}
 
-\noindent \includegraphics[width=8.5 cm]{eth8-final-bytes.pdf}
-
-\end{frame}
-
-\begin{frame}
-
-\noindent \includegraphics[width=8.5 cm]{legend.pdf}
+\includegraphics[width=\textwidth]{dumbbell.pdf}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Fixed 15 Mbps link, 12 senders, heavy-tailed flows}
+\frametitle{Scenario 1: details}
 
-\noindent \includegraphics[width=8.5 cm]{eth12-final-flowcdf.pdf}
+\begin{tabular}{lllll}
+\bf Quantity & & \bf Simulation parameter & \bf Remy assumptions \\
+
+\hline Link speed & & 15~Mbps & Uniform(10, 20)~Mbps \\
+
+RTT & & 150~ms & Uniform(100, 200)~ms \\
+
+$n$ & & 8 & Uniform(1, 16) \\
+
+``On'' process & & $\mathrm{exp}[\mu = 100]\,\textbf{\textcolor{DarkBlue}{kB}}$ & $\mathrm{exp}[\mu = 5]\,\textbf{\textcolor{DarkBlue}{s}}$ \\
+
+``Off'' process & & $\mathrm{exp}\left[\mu = \textcolor{DarkBlue}{\bm {\frac{1}{2}}}\right]\,\textsf{s}$ & $\mathrm{exp}[\mu = \textcolor{DarkBlue}{\bm 5} ]\,\textsf{s}$ \\
+
+\end{tabular}
+
+\ssline
+\ssline
+
+\textbf{Remy objective:} \[\sum_i \log \left[ \frac{\textsf{throughput}_i}{\big(\textsf{delay}_i\big)^{\textcolor{DarkBlue}{{\bm \delta}}}} \right]\]
+
+\[\textcolor{DarkBlue}{{\bm \delta}} \in \bigg\{ \frac{1}{10}, 1, 10 \bigg\} \]
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Verizon LTE, 8 senders, flows exp-distributed}
+\frametitle{Scenario 1: throughput-delay plot}
 
-\noindent \includegraphics[width=8.5 cm]{vzw-8-final.pdf}
+\begin{centering}
+\only<1>{\includegraphics[width=8.5 cm]{eth8-annotated-11.pdf}}\only<2>{\includegraphics[width=8.5 cm]{eth8-annotated-10.pdf}}\only<3>{\includegraphics[width=8.5 cm]{eth8-annotated-9.pdf}}\only<4>{\includegraphics[width=8.5 cm]{eth8-annotated-8.pdf}}\only<5>{\includegraphics[width=8.5 cm]{eth8-annotated-7.pdf}}\only<6>{\includegraphics[width=8.5 cm]{eth8-annotated-6.pdf}}\only<7>{\includegraphics[width=8.5 cm]{eth8-annotated-5.pdf}}\only<8>{\includegraphics[width=8.5 cm]{eth8-annotated-4.pdf}}\only<9>{\includegraphics[width=8.5 cm]{eth8-annotated-3.pdf}}\only<10>{\includegraphics[width=8.5 cm]{eth8-annotated-1.pdf}}\only<11>{\includegraphics[width=8.5 cm]{eth8-annotated.pdf}}
 
+\end{centering}
+\end{frame}
+
+\begin{frame}
+\frametitle{Scenario 2: $n = 12$, heavy-tailed flow lengths}
+
+\begin{centering}
+\includegraphics[width=8.5 cm]{eth12-final-flowcdf.pdf}
+
+\end{centering}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Scenario 3: Verizon LTE, $n = 8$}
+
+\begin{centering}
+\includegraphics[width=8.5 cm]{vzw-8-final.pdf}
+
+\end{centering}
 \end{frame}
 
 \begin{frame}
 \frametitle{Prior knowledge is helpful, when correct}
 
-\noindent \includegraphics[width=8.5 cm]{spec2.pdf}
+\begin{centering}
+\includegraphics[width=8.5 cm]{spec2.pdf}
+
+\end{centering}
 
 \end{frame}
 
@@ -641,7 +679,7 @@ $n$ & & Uniform(1, 16) \\
 
 \item[]
 
-\item Does performance degrade as prior knowledge weakens?
+\item Do we need more congestion signals to broaden range?
 
 \end{itemize}
 
