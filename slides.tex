@@ -3,7 +3,7 @@
 \usetheme{Dresden}
 \usecolortheme{beaver}
 
-\usepackage{import, fancybox, graphicx, color, colortbl}
+\usepackage{import, fancybox, graphicx, color, colortbl, bm}
 
 \newcommand{\ssline}{\vspace{8 pt}}
 
@@ -296,8 +296,11 @@ $\min_i \textsf{throughput}_i$
 \item
 \begin{minipage}{3.75 cm}
 \begin{tabular}{l}
-\only<2>{\cellcolor{Bisque}}\raisebox{0.75 cm}{\begin{minipage}{3.75 cm}
-\[\sum_i \log \left[ \frac{\textsf{throughput}_i}{\textsf{delay}_i} \right]\]
+\cellcolor{Bisque}\raisebox{0.75 cm}{\begin{minipage}{3.75 cm}
+\[\sum_i \log \left[ \frac{\textsf{throughput}_i}{\visible<2>{
+\textcolor{DarkBlue}{\big(}
+}\textsf{delay}_i\visible<2>{
+\textcolor{DarkBlue}{\big)^{\bm \delta}}}} \right]\]
 \end{minipage} \textsf{\textcolor{DarkBlue}{(proportionally fair throughput/delay)}}}
 \end{tabular}
 \end{minipage}
