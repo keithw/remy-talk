@@ -11,7 +11,7 @@ print STDERR "Writing to $filename_base.N.svg...\n";
 sub transformx {
   my ( $x ) = @_;
 
-  $x *= 32;
+  $x *= 50;
 
   $x = 1024 if $x > 1024;
 
@@ -21,7 +21,7 @@ sub transformx {
 sub transformy {
   my ( $y ) = @_;
 
-  $y *= 32;
+  $y *= 50;
 
   $y = 768 if $y > 768;
 
