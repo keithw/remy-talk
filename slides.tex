@@ -86,31 +86,31 @@
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Rational choice of scheme is challenging}
+%\begin{frame}
+%\frametitle{Rational choice of scheme is challenging}
+%
+%\begin{centering}
+%\includegraphics[height=20 pt]{cubic.pdf}\hspace{8 pt}{\bf vs.}\hspace{8 pt}\includegraphics[height=20 pt]{compound.pdf}
+%
+%\end{centering}
 
-\begin{centering}
-\includegraphics[height=20 pt]{cubic.pdf}\hspace{8 pt}{\bf vs.}\hspace{8 pt}\includegraphics[height=20 pt]{compound.pdf}
-
-\end{centering}
-
-\ssline
-\ssline
-\ssline
-
-\begin{itemize}
-
-\Large
-
-\item Different goals?
-
-\item Different assumptions about network?
-
-\item One scheme just plain better?
-
-\end{itemize}
-
-\end{frame}
+%\ssline
+%\ssline
+%\ssline
+%
+%\begin{itemize}
+%
+%\Large
+%
+%\item Different goals?
+%
+%\item Different assumptions about network?
+%
+%\item One scheme just plain better?
+%
+%\end{itemize}
+%
+%\end{frame}
 
 \begin{frame}
 \frametitle{What are the ends that TCP tries to achieve?}
@@ -549,9 +549,29 @@ $n$ & & Uniform(1, 16) \\
 \input{optimize.tex}
 
 \begin{frame}
-\frametitle{Fixed 15 Mbps link, 8 senders, flows exp-distributed}
+\frametitle{Evaluation in ns-2}
 
-\section{Experiments}
+\section{Evaluation}
+
+\begin{itemize}
+
+\item End-to-end comparators: \textcolor{Red}{NewReno, Cubic, Compound, Vegas}
+
+\item In-net comparators: \textcolor{DarkGreen}{Cubic-over-sfqCoDel, XCP, DCTCP}
+
+\item Simulation setup published for replication.
+
+\end{itemize}
+
+\begin{centering}
+\includegraphics[width=9 cm]{reproducethis.png}
+
+\end{centering}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fixed 15 Mbps link, 8 senders, flows exp-distributed}
 
 \noindent \includegraphics[width=8.5 cm]{eth8-final-bytes.pdf}
 
@@ -585,17 +605,19 @@ $n$ & & Uniform(1, 16) \\
 \end{frame}
 
 \begin{frame}
-\frametitle{Why does Remy work? TKTKTKTKTK}
 
+\frametitle{Our work}
 \section{Discussion}
 
-\begin{itemize}
-\item Not entirely clear! (TKTKTKTK)
+\begin{centering}
 
-\item Need to reverse-engineer algorithms.
+\LARGE \textcolor{DarkGreen}{If congestion control is the answer,\\what's the question?}
 
-\item Hundreds of rules --- are they all necessary?
-\end{itemize}
+\vspace{\baselineskip}
+
+\LARGE \textcolor{NavyBlue}{Are there better answers?}
+
+\end{centering}
 
 \end{frame}
 
@@ -606,71 +628,83 @@ $n$ & & Uniform(1, 16) \\
 
 \begin{itemize}
 \item Simple algorithm
-\item Complex and subpar emergent behavior
-\item \ldots worse when implicit assumptions not met
+\item Variable and subpar emergent behavior
+\item[] \ldots worse when \textcolor{DarkBlue}{implicit assumptions} not met
 \end{itemize}
 
 \textbf{Computer-designed algorithm:}
 
 \begin{itemize}
 \item Complex algorithm
-\item Consistent and good emergent behavior
-\item \ldots much worse when stated assumptions not met
+\item More consistent and better behavior
+\item[] \ldots worse when \textcolor{DarkBlue}{stated assumptions} not met
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Evolvability}
+\frametitle{Surprises}
 
-\textbf{Status quo:}
-
-\begin{itemize}
-
-\item link layer constrained by need for TCP to perform
-\item apps add hacks to get around TCP
-
-\end{itemize}
-
-\textbf{Evolvable transport:}
+\LARGE
 
 \begin{itemize}
 
-\item accommodate whatever link layer does \& app wants
+\item \textcolor{DarkGreen}{Computer-designed} {\LARGE \textbf{\textgreater}} \textcolor{DarkRed}{human-designed}
+
+\item[]
+
+\item \textcolor{DarkGreen}{End-to-end} {\LARGE \textbf{\textgreater}} \textcolor{DarkRed}{in-network{\LARGE \textbf{*}}}
+
+\item[]
+
+\item[] \hspace{6.0 cm}\normalsize\textcolor{DarkRed}{{\bf *} (so far)}
 
 \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Acknowledgments}
+
+\begin{centering}
+\begin{tabular}{lll}
+Anirudh Sivaraman & Ranjita Bhagwan \\
+Leslie Kaelbling & Christopher Amato \\
+Scott Shenker & Frans Kaashoek \\
+Nickolai Zeldovich & Damon Wischik \\
+Chris Lesniewski & Juliusz Chroboczek \\
+\end{tabular}
+
+\end{centering}
+
+\ssline
+\ssline
+
+\footnotesize We thank the members of the MIT Center for Wireless
+Networks and Mobile Computing (Wireless@MIT), including Amazon.com,
+Cisco, Google, Intel, Mediatek, Microsoft, ST Microelectronics, and
+Telefonica, for their support. KW was supported by the Claude
+E.~Shannon Research Assistantship. This work was also supported in
+part by NSF grant CNS-1040072.
 
 \end{frame}
 
 \begin{frame}
 \frametitle{Conclusions}
 
-\section{}
+\large
 
 \begin{itemize}
 
-\item Computer-designed $>$ human-designed
+\item The network evolves. Transport should let it!
 
-\item End-to-end $>$ human-designed in-net
+\item[]
 
-\item Focus on goal and assumptions $>$ focus on mechanism
+\item Computer-designed schemes can outperform humankind's best so far.
 
-\end{itemize}
+\item[]
 
-\end{frame}
-
-\begin{frame}
-\frametitle{Summary}
-
-\begin{itemize}
-
-\item Find the best schemes for \textbf{evolving} networks and apps.
-
-\item Transport should adapt to what lower layers do \& users want.
-
-\item Focus on policy, not mechanism.
-
-\item Get explicit about assumptions.
+\item Let's focus on the question---that's the hard part anyway.
 
 \end{itemize}
 
@@ -678,7 +712,9 @@ $n$ & & Uniform(1, 16) \\
 
 \begin{centering}
 
-http://web.mit.edu/remy
+\textcolor{DarkBlue}{http://web.mit.edu/remy}
+
+\vspace{\baselineskip}
 
 \{keithw,hari\}@mit.edu
 
