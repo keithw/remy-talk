@@ -502,25 +502,7 @@ Find piecewise-continuous \textsc{Rule}() that optimizes \\ expected value of ob
 
 \end{frame}
 
-\begin{frame}
-\frametitle{The algorithm (illustration TKTKTKTK)}
-
-\begin{itemize}
-\item Initially: one default rule for whole state space
-
-\item Find best action for whole state space
-
-\item Subdivide rule at median query $\rightarrow$ 8 new rules
-
-\item Repeat
-
-\end{itemize}
-
-\ssline
-
-Optimize existing rules and rule structure \textbf{in parallel}.
-
-\end{frame}
+\input{optimize.tex}
 
 \begin{frame}
 \frametitle{Fixed 15 Mbps link, 8 senders, flows exp-distributed}

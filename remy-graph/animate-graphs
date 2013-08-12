@@ -10,15 +10,18 @@ my $num = 0;
 FILE: while ( 1 ) {
   my $filename = $filename_base . $num . q{.svg};
   my $png = $filename_base . $num . q{.png};
+  my $pdf = $filename_base . $num . q{.pdf};
 
   open TARGET, $filename or last FILE;
 
   my $command = qq{inkscape --export-png=$png -y 1 $filename 2>&- >&-};
-
   print STDERR "Running $command... ";
-
   system $command;
+  print STDERR "done.\n";
 
+  $command = qq{inkscape --export-pdf=$pdf -y 1 $filename 2>&- >&-};
+  print STDERR "Running $command... ";
+  system $command;
   print STDERR "done.\n";
 
   close TARGET or die "$!";
