@@ -65,6 +65,14 @@ sub transformu {
   return 1 - (1 - $usage) ** 10;
 }
 
+sub min {
+  my $min = 1000000000;
+
+  for ( @_ ) { $min = $_ if ( $_ < $min ) }
+
+  return $min;
+}
+
 my %whisker_cache;
 
 my $num = 0;
@@ -136,12 +144,14 @@ LINE: while ( <> ) {
 
     my $dasharray = "none";
 
+    my $stroke_width = 5;
+
     if ( $new_whisker ) {
       ( $red, $green, $blue ) = ( 64, 64, 192 );
       $edge_color = "rgb(255,255,255)";
       $boxvar = \$topboxes;
       $textvar = \$toptext;
-      $dasharray = "3,4";
+      $stroke_width = "5";
     }
 
     $r = sprintf "%.1f", $r;
@@ -159,7 +169,7 @@ LINE: while ( <> ) {
 
 #    print STDERR "graphing from x [$left_edge <=> $right_edge] y [$bottom_edge <=> $top_edge]\n";
 
-    ${$boxvar} .= qq{<g transform="translate($left_edge,$top_edge)"><rect stroke-linejoin="round" stroke-dashoffset="0" height="$height" width="$width" stroke="$edge_color" stroke-linecap="butt" stroke-dasharray="$dasharray" x="0" y="0" stroke-miterlimit="4" stroke-width="3" fill="rgb($red,$green,$blue)"/></g>};
+    ${$boxvar} .= qq{<g transform="translate($left_edge,$top_edge)"><rect stroke-linejoin="round" stroke-dashoffset="0" height="$height" width="$width" stroke="$edge_color" stroke-linecap="butt" stroke-dasharray="$dasharray" x="0" y="0" stroke-miterlimit="4" stroke-width="$stroke_width" fill="rgb($red,$green,$blue)"/></g>};
 
     ${$textvar} .= qq{<g transform="translate($left_edge,$top_edge)"><text style="letter-spacing:0px;word-spacing:0px;" font-family="FreeSans" xml:space="preserve" font-size="${fs}px" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="normal" line-height="125%" fill="#000000"><tspan y="$texty" x="$textx" style="text-anchor:middle;text-align:center;">&lt;$mul,$incr,$r&gt;</tspan></text></g>};
   }
