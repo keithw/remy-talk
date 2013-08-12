@@ -1,0 +1,113 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+die "Usage: $0 FILENAME_BASE" unless (scalar @ARGV == 1);
+
+my $filename_base = shift @ARGV;
+
+print STDERR "Writing to $filename_base.N.svg...\n";
+
+sub transformx {
+  my ( $x ) = @_;
+
+  $x *= 32;
+
+  $x = 1024 if $x > 1024;
+
+  return $x
+}
+
+sub transformy {
+  my ( $y ) = @_;
+
+  $y *= 32;
+
+  $y = 768 if $y > 768;
+
+  return $y;
+}
+
+sub parse_memory {
+  my ( $memory ) = @_;
+
+  my ( $sewma, $rewma ) = $memory =~ m{sewma=([0-9.-]+), rewma=([0-9.-]+)};
+
+  return ( $sewma, $rewma );
+}
+
+sub parse_whisker {
+  my ( $whisker ) = @_;
+
+  my ( $lo_memory ) = $whisker =~ m{lo=<(.*?)>};
+  my ( $hi_memory ) = $whisker =~ m{hi=<(.*?)>};
+
+  my ( $lo_sewma, $lo_rewma ) = parse_memory( $lo_memory );
+  my ( $hi_sewma, $hi_rewma ) = parse_memory( $hi_memory );
+
+  my ( $usage ) = $whisker =~ m{usage=(.*?) };
+  $usage = 1.0 if $usage =~ m{nan};
+
+  my ( $incr )  = $whisker =~ m{win=([0-9.-]+)};
+  my ( $mul )   = $whisker =~ m{([0-9.-]+) \* win};
+  my ( $r )     = $whisker =~ m{intersend=([0-9.-]+)};
+
+  return ( $lo_sewma, $lo_rewma, $hi_sewma, $hi_rewma, $usage, $incr, $mul, $r );
+}
+
+sub transformu {
+  my ( $usage ) = @_;
+
+  return 1 - (1 - $usage) ** 10;
+}
+
+my $num = 0;
+LINE: while ( <> ) {
+  next unless m{^Whiskers.*before split};
+
+  my $filename = $filename_base . $num . q{.svg};
+
+  open TARGET, ">$filename" or die "$!";
+
+  print TARGET q{<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="768" width="1024" version="1.1">};
+
+  my ( @whiskers ) = m{\[(.*?)\]}g;
+
+  my $num_whiskers = scalar @whiskers;
+
+  print STDERR "Writing $num_whiskers whiskers to $filename... ";
+
+  for ( @whiskers ) {
+    my ( $lo_sewma, $lo_rewma, $hi_sewma, $hi_rewma, $usage, $incr, $mul, $r ) = parse_whisker( $_ );
+    my $left_edge = transformx( $lo_sewma );
+    my $right_edge = transformx( $hi_sewma );
+
+    my $top_edge = transformy( $lo_rewma );
+    my $bottom_edge = transformy( $hi_rewma );
+
+    my $height = $bottom_edge - $top_edge;
+    my $width = $right_edge - $left_edge;
+
+    $usage = transformu( $usage );
+
+    my $colorval = int( 255 - 255 * $usage );
+
+    my $texty = $height / 2 + 5;
+    my $textx = $width / 2;
+
+    $r = sprintf "%.1f", $r;
+    $mul = sprintf "%.2f", $mul;
+
+#    print STDERR "graphing from x [$left_edge <=> $right_edge] y [$bottom_edge <=> $top_edge]\n";
+
+    print TARGET qq{<g transform="translate($left_edge,$top_edge)"><rect stroke-linejoin="round" stroke-dashoffset="0" height="$height" width="$width" stroke="#000" stroke-linecap="butt" stroke-dasharray="none" x="0" y="0" stroke-miterlimit="4" stroke-width="2" fill="rgb(255,$colorval,$colorval)"/><text style="letter-spacing:0px;word-spacing:0px;" font-family="FreeSans" xml:space="preserve" font-size="10px" font-style="normal" font-stretch="normal" font-variant="normal" font-weight="normal" line-height="125%" fill="#000000"><tspan y="$texty" x="$textx" style="text-anchor:middle;text-align:center;">&lt;$mul,$incr,$r&gt;</tspan></text></g>};
+  }
+
+  print TARGET q{</svg>};
+
+  print STDERR "done.\n";
+
+  close TARGET or die "$!";
+
+  $num++;
+}

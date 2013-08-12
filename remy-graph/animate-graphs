@@ -1,0 +1,30 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+die "Usage: $0 FILENAME_BASE" unless (scalar @ARGV == 1);
+
+my $filename_base = shift @ARGV;
+
+my $num = 0;
+FILE: while ( 1 ) {
+  my $filename = $filename_base . $num . q{.svg};
+  my $png = $filename_base . $num . q{.png};
+
+  open TARGET, $filename or last FILE;
+
+  my $command = qq{inkscape --export-png=$png -y 1 $filename 2>&- >&-};
+
+  print STDERR "Running $command... ";
+
+  system $command;
+
+  print STDERR "done.\n";
+
+  close TARGET or die "$!";
+
+  $num++;
+}
+
+system qq{png2yuv -j ${filename_base}%d.png -f 25 -I p | x264 -o ${filename_base}.mp4 /dev/stdin};
+
