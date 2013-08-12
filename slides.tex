@@ -502,6 +502,39 @@ Find piecewise-continuous \textsc{Rule}() that optimizes \\ expected value of ob
 
 \end{frame}
 
+\begin{frame}
+\frametitle{Simplified RemyCC}
+
+\large
+
+\textbf{On ack:}
+
+\begin{itemize}
+\item $\langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{r}\rangle \leftarrow \textsc{Rule}( r\_ewma, s\_ewma\visible<1>{, \textcolor{DarkBlue}{\textbf{rtt\_ratio}}}\visible<2>{} )$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Prior assumptions}
+
+\large
+
+\begin{itemize}
+\item Link speed drawn uniformly on [10, 20] Mbps
+
+\item RTT drawn uniformly on [100, 200] ms
+
+\item $n$ drawn uniformly on [1, 16]
+
+\item ``On'' distribution: exponential time, mean = 5 seconds
+
+\item ``Off'' distribution: exponential time, mean = 5 seconds
+
+\end{itemize}
+
+\end{frame}
+
 \input{optimize.tex}
 
 \begin{frame}
