@@ -61,9 +61,20 @@ sub transformu {
   return 1 - (1 - $usage) ** 10;
 }
 
+my %whisker_cache;
+
 my $num = 0;
+
+my $hit_first = 0;
+
 LINE: while ( <> ) {
-  next unless m{^Whiskers.*before split};
+  next unless m{^Whiskers};
+
+  if ( $hit_first ) {
+    next unless m{split};
+  } else {
+    $hit_first = 1;
+  }
 
   my $filename = $filename_base . $num . q{.svg};
 
@@ -82,6 +93,15 @@ LINE: while ( <> ) {
 
   for ( @whiskers ) {
     my ( $lo_sewma, $lo_rewma, $hi_sewma, $hi_rewma, $usage, $incr, $mul, $r ) = parse_whisker( $_ );
+
+    my $new_whisker = 0;
+
+    my $wstr = "$lo_sewma $lo_rewma $hi_sewma $hi_rewma";
+    if ( not exists $whisker_cache{ $wstr } ) {
+      $new_whisker = 1;
+      $whisker_cache{ $wstr } = 1;
+    }
+
     my $left_edge = transformx( $lo_sewma );
     my $right_edge = transformx( $hi_sewma );
 
@@ -98,6 +118,10 @@ LINE: while ( <> ) {
     $colorval = 255 if $colorval > 255;
 
     my ( $red, $green, $blue ) = ( 255, $colorval, $colorval );
+
+    if ( $new_whisker ) {
+      ( $red, $green, $blue ) = ( 0, 0, 255 );
+    }
 
     $r = sprintf "%.1f", $r;
     $mul = sprintf "%.2f", $mul;
