@@ -282,15 +282,15 @@
 \begin{minipage}{3.75 cm}
 \begin{tabular}{l}
 \cellcolor{Bisque}\raisebox{0.75 cm}{\begin{minipage}{3.75 cm}
-\[\sum_i \log \left[ \frac{\textsf{throughput}_i}{\visible<2->{
+\[\sum_i \log \left[ \frac{\textsf{throughput}_i}{\visible<3->{
 \textcolor{DarkBlue}{\big(}
-}\textsf{delay}_i\visible<2->{
+}\textsf{delay}_i\visible<3->{
 \textcolor{DarkBlue}{\big)^{\bm \delta}}}} \right]\]
 \end{minipage} \textsf{\textcolor{DarkBlue}{(proportionally fair throughput/delay)}}}
 \end{tabular}
 \end{minipage}
 
-\visible<3>{
+\visible<4>{
 
 \item \begin{minipage}{3.75 cm}
 $\min_i \textsf{throughput}_i$
@@ -298,7 +298,7 @@ $\min_i \textsf{throughput}_i$
 }
 \end{itemize}
 
-\visible<3>{
+\visible<4>{
 \textbf{Minimize}
 
 \begin{itemize}
@@ -725,19 +725,19 @@ $n$ & & 8 & Uniform(1, 16) \\
 
 \item[]
 
-\item Agreeing on assumptions and goal may not be easy
-
-\item[]
-
 \item How to characterize robustness to the unforeseen?
 
 \item[]
 
-\item End-to-end = hard to handle an overaggressive competitor
+\item Can we make a RemyCC for a 10,000x range of throughputs?
 
 \item[]
 
-\item Can we make a RemyCC for a 10,000x range of throughputs?
+\item Agreeing on assumptions and goal may not be easy
+
+\item[]
+
+\item End-to-end = hard to handle an overaggressive competitor
 
 \item[]
 
