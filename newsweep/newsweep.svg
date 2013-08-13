@@ -150,12 +150,12 @@
      id="namedview139"
      showgrid="false"
      inkscape:zoom="1.1291667"
-     inkscape:cx="301.67401"
+     inkscape:cx="182.55962"
      inkscape:cy="253.02487"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer4"
+     inkscape:current-layer="layer2"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -318,7 +318,7 @@
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="Cubic"
-     style="display:none">
+     style="display:inline">
     <path
        transform="translate(3.8260882e-6,0)"
        style="color:#0000ff;fill:none;stroke:#ff0000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.75294118;stroke-dasharray:none"
@@ -343,7 +343,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Cubic sfqCoDel"
-     style="display:none">
+     style="display:inline">
     <path
        transform="translate(3.8260882e-6,0)"
        style="color:#00ffff;fill:none;stroke:#00c000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.75294118;stroke-dasharray:none"
@@ -367,13 +367,13 @@
          x="83.247231"
          y="88.838989"
          id="tspan4043"
-         style="font-size:20px;font-weight:600;fill:#008000;fill-opacity:0.75294118;-inkscape-font-specification:FreeSans Semi-Bold">sfqCoDeL</tspan></text>
+         style="font-size:20px;font-weight:600;fill:#008000;fill-opacity:0.75294118;-inkscape-font-specification:FreeSans Semi-Bold">sfqCoDel</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="RemyCC 1x"
-     style="display:none">
+     style="display:inline">
     <path
        transform="translate(3.8260882e-6,0)"
        inkscape:connector-curvature="0"
