@@ -19,6 +19,11 @@
 
 \titlepage
 
+\begin{raggedleft}
+\includegraphics[width=2 cm]{wirelessmitlogo.png}
+
+\end{raggedleft}
+
 \end{frame}
 
 \institute{MIT Computer Science and Artificial Intelligence Laboratory}
@@ -112,22 +117,22 @@
 %
 %\end{frame}
 
-\begin{frame}
-\frametitle{What are the ends that TCP tries to achieve?}
-
-\begin{itemize}
-
-\Large
-
-\item ``Teleology of TCP'' is mostly unknown
-
-\item Asymptotic solutions for long-running flows
-
-\item Dynamical behavior is complex
-
-\end{itemize}
-
-\end{frame}
+%\begin{frame}
+%\frametitle{What are the ends that TCP tries to achieve?}
+%
+%\begin{itemize}
+%
+%\Large
+%
+%\item ``Teleology of TCP'' is mostly unknown
+%
+%\item Asymptotic solutions for long-running flows
+%
+%\item Dynamical behavior is complex
+%
+%\end{itemize}
+%
+%\end{frame}
 
 \begin{frame}
 \frametitle{Networks constrained by a fuzzy idea of TCP's assumptions}
@@ -270,6 +275,35 @@
 \begin{frame}
 \frametitle{Objectives of congestion control}
 
+\textbf{Maximize}
+
+\begin{itemize}
+
+\item
+\begin{minipage}{3.75 cm}
+\begin{tabular}{l}
+\cellcolor{Bisque}\raisebox{0.75 cm}{\begin{minipage}{3.75 cm}
+\[\sum_i \log \left[ \frac{\textsf{throughput}_i}{\visible<2->{
+\textcolor{DarkBlue}{\big(}
+}\textsf{delay}_i\visible<2->{
+\textcolor{DarkBlue}{\big)^{\bm \delta}}}} \right]\]
+\end{minipage} \textsf{\textcolor{DarkBlue}{(proportionally fair throughput/delay)}}}
+\end{tabular}
+\end{minipage}
+
+\visible<3>{
+
+\item \begin{minipage}{3.75 cm}
+\[\sum_i \log \left[ \textsf{throughput}_i \right]\]
+\end{minipage} \textsf{\textcolor{DarkBlue}{(proportionally fair throughput)}}
+
+\item \begin{minipage}{3.75 cm}
+$\min_i \textsf{throughput}_i$
+\end{minipage} \textsf{\textcolor{DarkBlue}{(max-min throughput)}}
+}
+\end{itemize}
+
+\visible<3>{
 \textbf{Minimize}
 
 \begin{itemize}
@@ -280,32 +314,7 @@
 \item tail completion time
 
 \end{itemize}
-
-\textbf{Maximize}
-
-\begin{itemize}
-
-\item \begin{minipage}{3.75 cm}
-$\min_i \textsf{throughput}_i$
-\end{minipage} \textsf{\textcolor{DarkBlue}{(max-min throughput)}}
-
-\item \begin{minipage}{3.75 cm}
-\[\sum_i \log \left[ \textsf{throughput}_i \right]\]
-\end{minipage} \textsf{\textcolor{DarkBlue}{(proportionally fair throughput)}}
-
-\item
-\begin{minipage}{3.75 cm}
-\begin{tabular}{l}
-\cellcolor{Bisque}\raisebox{0.75 cm}{\begin{minipage}{3.75 cm}
-\[\sum_i \log \left[ \frac{\textsf{throughput}_i}{\visible<2>{
-\textcolor{DarkBlue}{\big(}
-}\textsf{delay}_i\visible<2>{
-\textcolor{DarkBlue}{\big)^{\bm \delta}}}} \right]\]
-\end{minipage} \textsf{\textcolor{DarkBlue}{(proportionally fair throughput/delay)}}}
-\end{tabular}
-\end{minipage}
-
-\end{itemize}
+}
 
 \end{frame}
 
@@ -329,36 +338,31 @@ $\min_i \textsf{throughput}_i$
 \item Web browsing, MapReduce, videoconferencing
 \end{itemize}
 
-\item May be \textcolor{Red}{specific} or \textcolor{DarkBlue}{not very informative} \\
-
-\vspace{4 pt}
-
-\tiny \hspace{1.6 cm} \textcolor{Red}{(E.g., XCP, pFabric)} \hspace{0.2 cm} \textcolor{DarkBlue}{(Tahoe, Reno, Cubic)}
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Statement of the problem}
-
-\Large
-
-\begin{itemize}
-
-\item Endpoints have no control over routing
-
-\item Each sender only gets own receiver's acks
-
-\item Goal: \textbf{\textcolor{DarkBlue}{optimize expected value of objective}}
-
+%\begin{frame}
+%\frametitle{Statement of the problem}
+%
+%\Large
+%
+%\begin{itemize}
+%
+%\item Endpoints have no control over routing
+%
+%\item Each sender only gets own receiver's acks
+%
+%\item Goal: \textbf{\textcolor{DarkBlue}{optimize expected value of objective}}
+%
 %\item[] \normalsize $\Rightarrow$ decentralized partially-observable Markov decision process
-
-\end{itemize}
-
-\end{frame}
+%
+%\end{itemize}
+%
+%\end{frame}
 
 \begin{frame}
-\frametitle{The intractable question of congestion control}
+\frametitle{Superrational congestion control}
 
 \begin{centering}
 \fbox{
@@ -379,16 +383,14 @@ $\min_i \textsf{throughput}_i$
 \ssline
 \ssline
 
-\pause
-
 \end{centering}
 
-\Large \noindent \hspace{-.5cm} \mbox{\textcolor{DarkBlue}{\textbf{*} Given {\bf full history} of packets sent and acks received!}}
+\Large \noindent \hspace{-.5cm} \mbox{\textcolor{DarkBlue}{\textbf{*} Assuming every node is running the same algorithm.}}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Remy: tractable search for the best}
+\frametitle{Remy: search for superrationality}
 
 \section{Remy}
 
@@ -398,11 +400,13 @@ $\min_i \textsf{throughput}_i$
 
 \item Remy searches for the best congestion-control algorithm
 
-\begin{itemize}
-\item optimizes given objective over prior assumptions about network
-\end{itemize}
+\item[]
 
-\item \textbf{\textcolor{DarkBlue}{Approximates}} solution by limiting available state
+\item Optimizes expected objective over prior assumptions
+
+\item[]
+
+\item Approximates solution by \textcolor{DarkBlue}{limiting available state}
 
 \end{itemize}
 
@@ -416,7 +420,11 @@ $\min_i \textsf{throughput}_i$
 \noindent \hspace{-0.75 cm}\begin{tabular}{ll}
 \textcolor{DarkBlue}{$r\_ewma$}: & moving average of interval between acks \\
 
+\\
+
 \textcolor{DarkBlue}{$s\_ewma$}: & \ldots between sender timestamps echoed in acks \\
+
+\\
 
 \textcolor{DarkBlue}{$rtt\_ratio$}: & ratio of last RTT to smallest RTT so far \\
 
@@ -449,7 +457,7 @@ $\min_i \textsf{throughput}_i$
 
 \Large
 
-\[\textsc{Rule}( \textcolor{DarkBlue}{r\_ewma}, \textcolor{DarkBlue}{s\_ewma}, \textcolor{DarkBlue}{rtt\_ratio} ) \rightarrow \langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{r} \rangle \]
+\[\textsc{Rule}( \textcolor{DarkBlue}{r\_ewma}, \textcolor{DarkBlue}{s\_ewma}, \textcolor{DarkBlue}{rtt\_ratio} ) \rightarrow \langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{\tau} \rangle \]
 
 \ssline
 \ssline
@@ -460,7 +468,7 @@ $\min_i \textsf{throughput}_i$
 
 \textcolor{Red}{$b$} & Increment to congestion window \\
 
-\textcolor{Red}{$r$} & Minimum interval between two outgoing packets \\
+\textcolor{Red}{$\tau$} & Minimum interval between two outgoing packets \\
 
 \end{tabular}
 
@@ -474,7 +482,7 @@ $\min_i \textsf{throughput}_i$
 \textbf{On ack:}
 
 \begin{itemize}
-\item $\langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{r}\rangle \leftarrow \textsc{Rule}( \textcolor{DarkBlue}{r\_ewma}, \textcolor{DarkBlue}{s\_ewma}, \textcolor{DarkBlue}{rtt\_ratio} )$
+\item $\langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{\tau}\rangle \leftarrow \textsc{Rule}( \textcolor{DarkBlue}{r\_ewma}, \textcolor{DarkBlue}{s\_ewma}, \textcolor{DarkBlue}{rtt\_ratio} )$
 
 \item $\texttt{cwnd} \leftarrow \textcolor{Red}{m} \cdot \texttt{cwnd} + \textcolor{Red}{b}$
 \end{itemize}
@@ -484,7 +492,7 @@ $\min_i \textsf{throughput}_i$
 \begin{itemize}
 \item $\texttt{cwnd} > \texttt{FlightSize}$, and
 
-\item last packet sent $> \textcolor{Red}{r}$ ago
+\item last packet sent $> \textcolor{Red}{\tau}$ ago
 \end{itemize}
 
 \end{frame}
@@ -503,14 +511,14 @@ Find piecewise-continuous \textsc{Rule}() that optimizes \\ expected value of ob
 \end{frame}
 
 \begin{frame}
-\frametitle{Remy example: Simplified RemyCC}
+\frametitle{Remy example: 2D state space}
 
 \large
 
 \textbf{On ack:}
 
 \begin{itemize}
-\item $\langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{r}\rangle \leftarrow \textsc{Rule}( r\_ewma, s\_ewma\visible<1>{, \textcolor{DarkBlue}{\textbf{rtt\_ratio}}}\visible<2>{} )$
+\item $\langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{\tau}\rangle \leftarrow \textsc{Rule}( r\_ewma, s\_ewma, \begin{tabular}{l}\only<2>{\cellcolor{DarkBlue}}\textcolor{DarkBlue}{\textbf{rtt\_ratio}}\end{tabular} )$
 \end{itemize}
 
 \end{frame}
@@ -523,11 +531,19 @@ Find piecewise-continuous \textsc{Rule}() that optimizes \\ expected value of ob
 \begin{tabular}{llll}
 \bf Quantity & & \bf Distribution & \bf Units \\
 
-\hline Link speed & & Uniform(10, 20) & Mbps \\
+\hline \\
+
+Link speed & & Uniform(10, 20) & Mbps \\
+
+\\
 
 RTT & & Uniform(100, 200) & ms \\
 
+\\
+
 $n$ & & Uniform(1, 16) \\
+
+\\
 
 ``On'' process & & $\mathrm{exp}[\mu = 5]$ & seconds \\
 
@@ -613,18 +629,18 @@ $n$ & & 8 & Uniform(1, 16) \\
 \end{centering}
 \end{frame}
 
+%\begin{frame}
+%\frametitle{Scenario 2: $n = 12$, heavy-tailed flow lengths}
+%
+%\begin{centering}
+%\includegraphics[width=8.5 cm]{eth12-final-flowcdf.pdf}
+%
+%\end{centering}
+%
+%\end{frame}
+
 \begin{frame}
-\frametitle{Scenario 2: $n = 12$, heavy-tailed flow lengths}
-
-\begin{centering}
-\includegraphics[width=8.5 cm]{eth12-final-flowcdf.pdf}
-
-\end{centering}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Scenario 3: Verizon LTE, $n = 8$}
+\frametitle{Scenario 2: Verizon LTE, $n = 8$}
 
 \begin{centering}
 \includegraphics[width=8.5 cm]{vzw-8-final.pdf}
@@ -632,58 +648,58 @@ $n$ & & 8 & Uniform(1, 16) \\
 \end{centering}
 \end{frame}
 
-\begin{frame}
-\frametitle{Scenario 4: data center}
-
-\textbf{Throughput (Mbps):}
-
-\begin{tabular}{lll}
-&  Mean &  Median \\
- DCTCP (ECN) & \cellcolor{Green} 179 & 144 \\
- RemyCC (DropTail) & 175 & \cellcolor{Green} 158 \\
+%\begin{frame}
+%\frametitle{Scenario 4: data center}
+%
+%\textbf{Throughput (Mbps):}
+%
+%\begin{tabular}{lll}
+%&  Mean &  Median \\
+% DCTCP (ECN) & \cellcolor{Green} 179 & 144 \\
+% RemyCC (DropTail) & 175 & \cellcolor{Green} 158 \\
 % RemyCC+RED & 102,  & \\
-\vspace{\baselineskip}
-\end{tabular}
-
-\ssline
-\ssline
-
-\textbf{RTT (ms):}
-
-\begin{tabular}{lll}
-&  Mean &  Median \\
- DCTCP (ECN) & \cellcolor{Green}{7.5} & \cellcolor{Green}{6.4} \\
- RemyCC (DropTail) & {34} & {39} \\
+%\vspace{\baselineskip}
+%\end{tabular}
+%
+%\ssline
+%\ssline
+%
+%\textbf{RTT (ms):}
+%
+%\begin{tabular}{lll}
+%&  Mean &  Median \\
+% DCTCP (ECN) & \cellcolor{Green}{7.5} & \cellcolor{Green}{6.4} \\
+% RemyCC (DropTail) & {34} & {39} \\
 %\bf RemyCC+RED & 102,  & \\
-\vspace{\baselineskip}
-\end{tabular}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Scenario 5: heterogenous traffic}
-
-\begin{itemize}
-\item Standing queue from cross traffic can't be solved end-to-end
-\item But can keep up in throughput if included in assumptions
-\end{itemize}
-
-\ssline
-
-\begin{tabular}{lll}
-\bf Mean off time & \bf RemyCC tput & \bf Compound tput \\
-\hline 200 ms & \cellcolor{Green} 2.12 (.11)~Mbps & 1.79 (.18)~Mbps \\
-100 & 2.18 (.08)  & \cellcolor{Green} 2.75 (.27) \\
-10 & 2.28 (.10) & \cellcolor{Green} 3.9 (.13) \\
-\\
-\\
-\bf Mean size & \bf RemyCC tput & \bf Cubic tput \\
-\hline
-100 KBytes & \cellcolor{Green} 2.04 (.14) & 1.31 (.16)\\
-1 MByte & \cellcolor{Green} 2.09 (.11) & 1.28 (.11) \\
-\end{tabular}
-
-\end{frame}
+%\vspace{\baselineskip}
+%\end{tabular}
+%
+%\end{frame}
+%
+%\begin{frame}
+%\frametitle{Scenario 5: heterogenous traffic}
+%
+%\begin{itemize}
+%\item Standing queue from cross traffic can't be solved end-to-end
+%\item But can keep up in throughput if included in assumptions
+%\end{itemize}
+%
+%\ssline
+%
+%\begin{tabular}{lll}
+%\bf Mean off time & \bf RemyCC tput & \bf Compound tput \\
+%\hline 200 ms & \cellcolor{Green} 2.12 (.11)~Mbps & 1.79 (.18)~Mbps \\
+%100 & 2.18 (.08)  & \cellcolor{Green} 2.75 (.27) \\
+%10 & 2.28 (.10) & \cellcolor{Green} 3.9 (.13) \\
+%\\
+%\\
+%\bf Mean size & \bf RemyCC tput & \bf Cubic tput \\
+%\hline
+%100 KBytes & \cellcolor{Green} 2.04 (.14) & 1.31 (.16)\\
+%1 MByte & \cellcolor{Green} 2.09 (.11) & 1.28 (.11) \\
+%\end{tabular}
+%
+%\end{frame}
 
 \begin{frame}
 \frametitle{Prior knowledge is helpful, when correct}
@@ -696,24 +712,9 @@ $n$ & & 8 & Uniform(1, 16) \\
 \end{frame}
 
 \begin{frame}
-
-\frametitle{Our work}
-\section{Discussion}
-
-\begin{centering}
-
-\LARGE \textcolor{DarkGreen}{If congestion control is the answer,\\what's the question?}
-
-\vspace{\baselineskip}
-
-\LARGE \textcolor{NavyBlue}{Are there better answers?}
-
-\end{centering}
-
-\end{frame}
-
-\begin{frame}
 \frametitle{Limitations and future work}
+
+\section{Discussion}
 
 \begin{itemize}
 \item Tested only in simulation so far
@@ -736,79 +737,58 @@ $n$ & & 8 & Uniform(1, 16) \\
 
 \item[]
 
-\item Not proposing Internet-scale deployment anytime soon
+\item Not proposing Internet-scale deployment any time soon
 
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Goal-driven algorithm \textbf{moves} the complexity}
-
-\textbf{Human-designed algorithm:}
-
-\begin{itemize}
-\item Simple algorithm
-\item Variable and subpar emergent behavior
-\item[] \ldots worse when \textcolor{DarkBlue}{implicit assumptions} not met
-\end{itemize}
-
-\textbf{Computer-designed algorithm:}
-
-\begin{itemize}
-\item Complex algorithm
-\item More consistent and better behavior
-\item[] \ldots worse when \textcolor{DarkBlue}{stated assumptions} not met
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Surprises}
-
-\LARGE
-
-\begin{itemize}
-
-\item \textcolor{DarkGreen}{Computer-designed} {\LARGE \textbf{\textgreater}} \textcolor{DarkRed}{human-designed}
-
-\item[]
-
-\item \textcolor{DarkGreen}{End-to-end} {\LARGE \textbf{\textgreater}} \textcolor{DarkRed}{in-network{\LARGE \textbf{*}}}
-
-\item[]
-
-\item[] \hspace{6.0 cm}\normalsize\textcolor{DarkRed}{{\bf *} (so far)}
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Acknowledgments}
-
-\begin{centering}
-\begin{tabular}{lll}
-Anirudh Sivaraman & Ranjita Bhagwan \\
-Leslie Kaelbling & Christopher Amato \\
-Scott Shenker & Frans Kaashoek \\
-Nickolai Zeldovich & Damon Wischik \\
-Chris Lesniewski & Juliusz Chroboczek \\
-\end{tabular}
-
-\end{centering}
-
-\ssline
-\ssline
-
-\footnotesize We thank the members of the MIT Center for Wireless
-Networks and Mobile Computing (Wireless@MIT), including Amazon.com,
-Cisco, Google, Intel, Mediatek, Microsoft, ST Microelectronics, and
-Telefonica, for their support. KW was supported by the Claude
-E.~Shannon Research Assistantship. This work was also supported in
-part by NSF grant CNS-1040072.
-
-\end{frame}
+%\begin{frame}
+%\frametitle{Surprises}
+%
+%\LARGE
+%
+%\begin{itemize}
+%
+%\item \textcolor{DarkGreen}{Computer-designed} {\LARGE \textbf{\textgreater}} \textcolor{DarkRed}{human-designed}
+%
+%\item[]
+%
+%\item \textcolor{DarkGreen}{End-to-end} {\LARGE \textbf{\textgreater}} \textcolor{DarkRed}{in-network{\LARGE \textbf{*}}}
+%
+%\item[]
+%
+%\item[] \hspace{6.0 cm}\normalsize\textcolor{DarkRed}{{\bf *} (so far)}
+%
+%\end{itemize}
+%
+%\end{frame}
+%
+%\begin{frame}
+%\frametitle{Acknowledgments}
+%
+%\begin{centering}
+%\begin{tabular}{lll}
+%Anirudh Sivaraman & Ranjita Bhagwan \\
+%Leslie Kaelbling & Christopher Amato \\
+%Scott Shenker & Frans Kaashoek \\
+%Nickolai Zeldovich & Damon Wischik \\
+%Chris Lesniewski & Juliusz Chroboczek \\
+%\end{tabular}
+%
+%\end{centering}
+%
+%\ssline
+%\ssline
+%
+%\footnotesize We thank the members of the MIT Center for Wireless
+%Networks and Mobile Computing (Wireless@MIT), including Amazon.com,
+%Cisco, Google, Intel, Mediatek, Microsoft, ST Microelectronics, and
+%Telefonica, for their support. KW was supported by the Claude
+%E.~Shannon Research Assistantship. This work was also supported in
+%part by NSF grant CNS-1040072.
+%
+%\end{frame}
 
 \begin{frame}
 \frametitle{Conclusions}
@@ -817,30 +797,35 @@ part by NSF grant CNS-1040072.
 
 \begin{itemize}
 
+\item \textcolor{DarkGreen}{Computer-designed} {\LARGE \textbf{\textgreater}} \textcolor{DarkRed}{human-designed}
+
+\item[]
+
+\item \textcolor{DarkGreen}{End-to-end} {\LARGE \textbf{\textgreater}} \textcolor{DarkRed}{in-net}
+
+\item[]
+
 \item The network evolves. Transport should let it!
-
-\item[]
-
-\item \$10 buys a computer-designed scheme that outperforms some of
-  humankind's best.
-
-\item[]
-
-\item Let's focus on the question---that's the hard part anyway.
 
 \end{itemize}
 
+\ssline
 \ssline
 
 \begin{centering}
 
 \textcolor{DarkBlue}{http://web.mit.edu/remy}
 
-\vspace{\baselineskip}
+\vspace{7 pt}
 
-\{keithw,hari\}@mit.edu
+\{keithw, hari\}@mit.edu
 
 \end{centering}
+
+\begin{raggedleft}
+\includegraphics[width=2 cm]{wirelessmitlogo.png}
+
+\end{raggedleft}
 
 \end{frame}
 
