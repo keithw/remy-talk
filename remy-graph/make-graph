@@ -17,7 +17,7 @@ sub transformx {
 
   $x = 1024 * ($x ** 0.5) / (1024 ** 0.5);
 
-  $x += 8;
+  $x += 8 + 52;
 
   return $x
 }
@@ -100,7 +100,9 @@ LINE: while ( <> ) {
 
   open TARGET, ">$filename" or die "$!";
 
-  print TARGET q{<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="784" width="1040" version="1.1">};
+  print TARGET q{<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="836" width="1088" version="1.1">};
+
+  print TARGET q{ <text style="letter-spacing:0px;word-spacing:0px;" font-weight="normal" xml:space="preserve" font-size="40px" font-stretch="normal" line-height="125%" font-variant="normal" y="823.08478" x="491.47324" font-family="FreeSans" font-style="normal" fill="#000000"><tspan x="491.47324" y="823.08478">s_ewma</tspan></text><text style="letter-spacing:0px;word-spacing:0px;" font-weight="normal" xml:space="preserve" transform="matrix(0,-1,1,0,0,0)" font-stretch="normal" line-height="125%" font-size="40px" font-variant="normal" y="21.559999" x="-457.80063" font-family="FreeSans" font-style="normal" fill="#000000"><tspan x="-457.80063" y="21.559999">r_ewma</tspan></text> };
 
   my ( @whiskers ) = m{\[(.*?)\]}g;
 
@@ -160,6 +162,10 @@ LINE: while ( <> ) {
 
     $r = sprintf "%.1f", $r;
     $mul = sprintf "%.2f", $mul;
+
+    if ( $mul eq "1.00" and $incr eq "1" and $r eq "0.1" ) {
+      $mul = $incr = $r = "?";
+    }
 
     my $fs = $width / 8;
 
