@@ -250,13 +250,6 @@
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Dumbbell network}
-
-\only<1>{\noindent\includegraphics[width=\textwidth]{dumbbell-2.pdf}}\only<2>{\noindent\includegraphics[width=\textwidth]{dumbbell-1.pdf}}\only<3>{\noindent\includegraphics[width=\textwidth]{dumbbell.pdf}}
-
-\end{frame}
-
 %\begin{frame}
 %\frametitle{The goal}
 %
@@ -341,6 +334,13 @@ $\min_i \textsf{throughput}_i$
 \end{itemize}
 
 \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Dumbbell network}
+
+\only<1>{\noindent\includegraphics[width=\textwidth]{dumbbell-2.pdf}}\only<2>{\noindent\includegraphics[width=\textwidth]{dumbbell-1.pdf}}\only<3>{\noindent\includegraphics[width=\textwidth]{dumbbell.pdf}}
 
 \end{frame}
 
@@ -577,7 +577,7 @@ $n$ & & Uniform(1, 16) \\
 
 \item End-to-end comparators: \textcolor{Red}{NewReno, Cubic, Compound, Vegas}
 
-\item In-net comparators: \textcolor{DarkGreen}{Cubic-over-sfqCoDel, XCP, DCTCP}
+\item In-net comparators: \textcolor{DarkGreen}{Cubic-over-sfqCoDel, XCP}
 
 \item Simulation setup published for replication
 
@@ -706,10 +706,10 @@ $n$ & & 8 & Uniform(1, 16) \\
 %\end{frame}
 
 \begin{frame}
-\frametitle{Prior knowledge is helpful, when correct}
+\frametitle{The effect of prior knowledge}
 
 \begin{centering}
-\includegraphics[width=8.5 cm]{spec2.pdf}
+\only<1>{\includegraphics[width=8.5 cm]{newsweep/newsweep-a.pdf}}\only<2>{\includegraphics[width=8.5 cm]{newsweep/newsweep-b.pdf}}\only<3>{\includegraphics[width=8.5 cm]{newsweep/newsweep-c.pdf}}\only<4>{\includegraphics[width=8.5 cm]{newsweep/newsweep-d.pdf}}
 
 \end{centering}
 
