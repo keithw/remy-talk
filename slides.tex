@@ -91,31 +91,31 @@
 
 \end{frame}
 
-%\begin{frame}
-%\frametitle{Rational choice of scheme is challenging}
-%
-%\begin{centering}
-%\includegraphics[height=20 pt]{cubic.pdf}\hspace{8 pt}{\bf vs.}\hspace{8 pt}\includegraphics[height=20 pt]{compound.pdf}
-%
-%\end{centering}
+\begin{frame}
+\frametitle{Rational choice of scheme is challenging}
 
-%\ssline
-%\ssline
-%\ssline
-%
-%\begin{itemize}
-%
-%\Large
-%
-%\item Different goals?
-%
-%\item Different assumptions about network?
-%
-%\item One scheme just plain better?
-%
-%\end{itemize}
-%
-%\end{frame}
+\begin{centering}
+\includegraphics[height=20 pt]{cubic.pdf}\hspace{8 pt}{\bf vs.}\hspace{8 pt}\includegraphics[height=20 pt]{compound.pdf}
+
+\end{centering}
+
+\ssline
+\ssline
+\ssline
+
+\begin{itemize}
+
+\Large
+
+\item Different goals?
+
+\item Different assumptions about network?
+
+\item One scheme just plain better?
+
+\end{itemize}
+
+\end{frame}
 
 %\begin{frame}
 %\frametitle{What are the ends that TCP tries to achieve?}
@@ -279,6 +279,12 @@
 
 \begin{itemize}
 
+\item \begin{minipage}{3.75 cm}
+\[\sum_i \log \left[ \textsf{throughput}_i \right]\]
+\end{minipage} \textsf{\textcolor{DarkBlue}{(proportionally fair throughput)}}
+
+\pause
+
 \item
 \begin{minipage}{3.75 cm}
 \begin{tabular}{l}
@@ -292,10 +298,6 @@
 \end{minipage}
 
 \visible<3>{
-
-\item \begin{minipage}{3.75 cm}
-\[\sum_i \log \left[ \textsf{throughput}_i \right]\]
-\end{minipage} \textsf{\textcolor{DarkBlue}{(proportionally fair throughput)}}
 
 \item \begin{minipage}{3.75 cm}
 $\min_i \textsf{throughput}_i$
@@ -319,7 +321,7 @@ $\min_i \textsf{throughput}_i$
 \end{frame}
 
 \begin{frame}
-\frametitle{Prior knowledge}
+\frametitle{Prior assumptions}
 
 \begin{itemize}
 
@@ -390,7 +392,7 @@ $\min_i \textsf{throughput}_i$
 \end{frame}
 
 \begin{frame}
-\frametitle{Remy: search for superrationality}
+\frametitle{Remy: search for super\textcolor{Black}{rat}ionality}
 
 \section{Remy}
 
@@ -406,7 +408,7 @@ $\min_i \textsf{throughput}_i$
 
 \item[]
 
-\item Approximates solution by \textcolor{DarkBlue}{limiting available state}
+\item Makes tractable by \textcolor{DarkBlue}{limiting available state}
 
 \end{itemize}
 
@@ -415,8 +417,9 @@ $\min_i \textsf{throughput}_i$
 \begin{frame}
 \frametitle{A RemyCC tracks three congestion signals}
 
-\Large
+\large
 
+\begin{centering}
 \noindent \hspace{-0.75 cm}\begin{tabular}{ll}
 \textcolor{DarkBlue}{$r\_ewma$}: & moving average of interval between acks \\
 
@@ -430,6 +433,7 @@ $\min_i \textsf{throughput}_i$
 
 \end{tabular}
 
+\end{centering}
 \end{frame}
 
 \begin{frame}

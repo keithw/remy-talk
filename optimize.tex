@@ -1,545 +1,456 @@
 \begin{frame}
 
-\only<1>{
-\frametitle{Optimize default action}
+\only<1>{\frametitle{One action for all states. Find the best value.}
 \begin{centering}
 \includegraphics[width=9.25 cm]{remy-graph/graph/test0.pdf}
 
 \end{centering}}
-\only<2>{
-\frametitle{Split and duplicate at median query}
+\only<2>{\frametitle{The best (single) action. Now split it on median.}
 \begin{centering}
 \includegraphics[width=9.25 cm]{remy-graph/graph/test1.pdf}
 
 \end{centering}}
 
-\only<3>{
-\frametitle{Run in simulation}
+\only<3>{\frametitle{Simulate}
 \begin{centering}
 \includegraphics[width=9.25 cm]{remy-graph/graph/test2.pdf}
 
 \end{centering}
 }
 
-\only<4>{
-\frametitle{Optimize all actions}
+\only<4>{\frametitle{Optimize each of the new actions}
 \begin{centering}
 \includegraphics[width=9.25 cm]{remy-graph/graph/test3.pdf}
 
 \end{centering}
 }
 
-\only<5>{
-\frametitle{Split most-used rule}
+\only<5>{\frametitle{Now split the most-used rule}
 \begin{centering}
 \includegraphics[width=9.25 cm]{remy-graph/graph/test4.pdf}
 
 \end{centering}
 }
 
-\only<6>{
-\frametitle{Iterate}
+\only<6>{\frametitle{Simulate}
 \begin{centering}
 \includegraphics[width=9.25 cm]{remy-graph/graph/test5.pdf}
 
 \end{centering}
 }
 
-\only<7>{
-\frametitle{Iterate}
+\only<7>{\frametitle{Optimize}
 \begin{centering}
 \includegraphics[width=9.25 cm]{remy-graph/graph/test6.pdf}
 
 \end{centering}
 }
-\only<8>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test7.pdf}
+\only<8>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test7.pdf}
 
 \end{centering}}
 
 
-\only<9>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test8.pdf}
+\only<9>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test8.pdf}
 
 \end{centering}}
 
 
-\only<10>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test9.pdf}
+\only<10>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test9.pdf}
 
 \end{centering}}
 
 
-\only<11>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test10.pdf}
+\only<11>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test10.pdf}
 
 \end{centering}}
 
 
-\only<12>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test11.pdf}
+\only<12>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test11.pdf}
 
 \end{centering}}
 
 
-\only<13>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test12.pdf}
+\only<13>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test12.pdf}
 
 \end{centering}}
 
 
-\only<14>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test13.pdf}
+\only<14>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test13.pdf}
 
 \end{centering}}
 
 
-\only<15>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test14.pdf}
+\only<15>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test14.pdf}
 
 \end{centering}}
 
 
-\only<16>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test15.pdf}
+\only<16>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test15.pdf}
 
 \end{centering}}
 
 
-\only<17>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test16.pdf}
+\only<17>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test16.pdf}
 
 \end{centering}}
 
 
-\only<18>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test17.pdf}
+\only<18>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test17.pdf}
 
 \end{centering}}
 
 
-\only<19>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test18.pdf}
+\only<19>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test18.pdf}
 
 \end{centering}}
 
 
-\only<20>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test19.pdf}
+\only<20>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test19.pdf}
 
 \end{centering}}
 
 
-\only<21>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test20.pdf}
+\only<21>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test20.pdf}
 
 \end{centering}}
 
 
-\only<22>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test21.pdf}
+\only<22>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test21.pdf}
 
 \end{centering}}
 
 
-\only<23>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test22.pdf}
+\only<23>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test22.pdf}
 
 \end{centering}}
 
 
-\only<24>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test23.pdf}
+\only<24>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test23.pdf}
 
 \end{centering}}
 
 
-\only<25>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test24.pdf}
+\only<25>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test24.pdf}
 
 \end{centering}}
 
 
-\only<26>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test25.pdf}
+\only<26>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test25.pdf}
 
 \end{centering}}
 
 
-\only<27>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test26.pdf}
+\only<27>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test26.pdf}
 
 \end{centering}}
 
 
-\only<28>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test27.pdf}
+\only<28>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test27.pdf}
 
 \end{centering}}
 
 
-\only<29>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test28.pdf}
+\only<29>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test28.pdf}
 
 \end{centering}}
 
 
-\only<30>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test29.pdf}
+\only<30>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test29.pdf}
 
 \end{centering}}
 
 
-\only<31>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test30.pdf}
+\only<31>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test30.pdf}
 
 \end{centering}}
 
 
-\only<32>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test31.pdf}
+\only<32>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test31.pdf}
 
 \end{centering}}
 
 
-\only<33>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test32.pdf}
+\only<33>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test32.pdf}
 
 \end{centering}}
 
 
-\only<34>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test33.pdf}
+\only<34>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test33.pdf}
 
 \end{centering}}
 
 
-\only<35>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test34.pdf}
+\only<35>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test34.pdf}
 
 \end{centering}}
 
 
-\only<36>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test35.pdf}
+\only<36>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test35.pdf}
 
 \end{centering}}
 
 
-\only<37>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test36.pdf}
+\only<37>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test36.pdf}
 
 \end{centering}}
 
 
-\only<38>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test37.pdf}
+\only<38>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test37.pdf}
 
 \end{centering}}
 
 
-\only<39>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test38.pdf}
+\only<39>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test38.pdf}
 
 \end{centering}}
 
 
-\only<40>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test39.pdf}
+\only<40>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test39.pdf}
 
 \end{centering}}
 
 
-\only<41>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test40.pdf}
+\only<41>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test40.pdf}
 
 \end{centering}}
 
 
-\only<42>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test41.pdf}
+\only<42>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test41.pdf}
 
 \end{centering}}
 
 
-\only<43>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test42.pdf}
+\only<43>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test42.pdf}
 
 \end{centering}}
 
 
-\only<44>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test43.pdf}
+\only<44>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test43.pdf}
 
 \end{centering}}
 
 
-\only<45>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test44.pdf}
+\only<45>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test44.pdf}
 
 \end{centering}}
 
 
-\only<46>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test45.pdf}
+\only<46>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test45.pdf}
 
 \end{centering}}
 
 
-\only<47>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test46.pdf}
+\only<47>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test46.pdf}
 
 \end{centering}}
 
 
-\only<48>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test47.pdf}
+\only<48>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test47.pdf}
 
 \end{centering}}
 
 
-\only<49>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test48.pdf}
+\only<49>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test48.pdf}
 
 \end{centering}}
 
 
-\only<50>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test49.pdf}
+\only<50>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test49.pdf}
 
 \end{centering}}
 
 
-\only<51>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test50.pdf}
+\only<51>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test50.pdf}
 
 \end{centering}}
 
 
-\only<52>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test51.pdf}
+\only<52>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test51.pdf}
 
 \end{centering}}
 
 
-\only<53>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test52.pdf}
+\only<53>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test52.pdf}
 
 \end{centering}}
 
 
-\only<54>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test53.pdf}
+\only<54>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test53.pdf}
 
 \end{centering}}
 
 
-\only<55>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test54.pdf}
+\only<55>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test54.pdf}
 
 \end{centering}}
 
 
-\only<56>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test55.pdf}
+\only<56>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test55.pdf}
 
 \end{centering}}
 
 
-\only<57>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test56.pdf}
+\only<57>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test56.pdf}
 
 \end{centering}}
 
 
-\only<58>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test57.pdf}
+\only<58>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test57.pdf}
 
 \end{centering}}
 
 
-\only<59>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test58.pdf}
+\only<59>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test58.pdf}
 
 \end{centering}}
 
 
-\only<60>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test59.pdf}
+\only<60>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test59.pdf}
 
 \end{centering}}
 
 
-\only<61>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test60.pdf}
+\only<61>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test60.pdf}
 
 \end{centering}}
 
 
-\only<62>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test61.pdf}
+\only<62>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test61.pdf}
 
 \end{centering}}
 
 
-\only<63>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test62.pdf}
+\only<63>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test62.pdf}
 
 \end{centering}}
 
 
-\only<64>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test63.pdf}
+\only<64>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test63.pdf}
 
 \end{centering}}
 
 
-\only<65>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test64.pdf}
+\only<65>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test64.pdf}
 
 \end{centering}}
 
 
-\only<66>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test65.pdf}
+\only<66>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test65.pdf}
 
 \end{centering}}
 
 
-\only<67>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test66.pdf}
+\only<67>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test66.pdf}
 
 \end{centering}}
 
 
-\only<68>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test67.pdf}
+\only<68>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test67.pdf}
 
 \end{centering}}
 
 
-\only<69>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test68.pdf}
+\only<69>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test68.pdf}
 
 \end{centering}}
 
 
-\only<70>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test69.pdf}
+\only<70>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test69.pdf}
 
 \end{centering}}
 
 
-\only<71>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test70.pdf}
+\only<71>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test70.pdf}
 
 \end{centering}}
 
 
-\only<72>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test71.pdf}
+\only<72>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test71.pdf}
 
 \end{centering}}
 
 
-\only<73>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test72.pdf}
+\only<73>{\frametitle{Optimize}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test72.pdf}
 
 \end{centering}}
 
 
-\only<74>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test73.pdf}
+\only<74>{\frametitle{Split}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test73.pdf}
 
 \end{centering}}
 
 
-\only<75>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test74.pdf}
+\only<75>{\frametitle{Simulate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test74.pdf}
 
 \end{centering}}
 
 
-\only<76>{
-\frametitle{Iterate\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test75.pdf}
+\only<76>{\frametitle{RemyCC\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test75.pdf}
 
 \end{centering}}
 
 
-\only<77>{
-\frametitle{Iterate\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test76.pdf}
+\only<77>{\frametitle{RemyCC\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test76.pdf}
 
 \end{centering}}
 
 
-\only<78>{
-\frametitle{Iterate\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test77.pdf}
+\only<78>{\frametitle{RemyCC\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test77.pdf}
 
 \end{centering}}
 
 
-\only<79>{
-\frametitle{Iterate\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test78.pdf}
+\only<79>{\frametitle{RemyCC\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test78.pdf}
 
 \end{centering}}
 
 
-\only<80>{
-\frametitle{Iterate\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test79.pdf}
+\only<80>{\frametitle{RemyCC\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test79.pdf}
 
 \end{centering}}
 
 
-\only<81>{
-\frametitle{Iterate\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test80.pdf}
+\only<81>{\frametitle{RemyCC\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test80.pdf}
 
 \end{centering}}
 
 
-\only<82>{
-\frametitle{Iterate\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test81.pdf}
+\only<82>{\frametitle{RemyCC\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test81.pdf}
 
 \end{centering}}
 
 
-\only<83>{
-\frametitle{Iterate\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test82.pdf}
+\only<83>{\frametitle{RemyCC\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test82.pdf}
 
 \end{centering}}
 
 
-\only<84>{
-\frametitle{Iterate\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test83.pdf}
+\only<84>{\frametitle{RemyCC\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test83.pdf}
 
 \end{centering}}
 
 
-\only<85>{
-\frametitle{Iterate\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test84.pdf}
+\only<85>{\frametitle{RemyCC\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test84.pdf}
 
 \end{centering}}
 
 
-\only<86>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test85.pdf}
+\only<86>{\frametitle{RemyCC}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test85.pdf}
 
 \end{centering}}
 
 
-\only<87>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test86.pdf}
+\only<87>{\frametitle{RemyCC}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test86.pdf}
 
 \end{centering}}
 
 
-\only<88>{
-\frametitle{Iterate\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test87.pdf}
+\only<88>{\frametitle{RemyCC\hspace{10 cm}.}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test87.pdf}
 
 \end{centering}}
 
 
-\only<89>{
-\frametitle{Iterate}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test88.pdf}
+\only<89>{\frametitle{RemyCC}\begin{centering}\includegraphics[width=9.25 cm]{remy-graph/graph/test88.pdf}
 
 \end{centering}}
 
