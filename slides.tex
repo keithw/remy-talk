@@ -9,9 +9,9 @@
 
 \title{TCP ex Machina: \\Computer-Generated Congestion Control}
 
-\author{Keith~Winstein and Hari~Balakrishnan}
-\institute{MIT Computer Science and Artificial Intelligence Laboratory\\\vspace{\baselineskip}\textcolor{DarkBlue}{http://web.mit.edu/remy}}
-\date{August 14, 2013}
+\author{Keith~Winstein}
+\institute{MIT CSAIL \& Wireless@MIT\\\vspace{\baselineskip}\textcolor{DarkBlue}{http://web.mit.edu/remy}}
+\date{October 23, 2013}
 
 \begin{document}
 
@@ -19,10 +19,12 @@
 
 \titlepage
 
-\begin{raggedleft}
-\includegraphics[width=2 cm]{wirelessmitlogo.png}
+\noindent \begin{tabular}{lp{5.5 cm}r}
 
-\end{raggedleft}
+\includegraphics[width=1.75 cm]{csaillogomed.png}
+& & \includegraphics[width=2 cm]{wirelessmitlogo.png} \\
+
+\end{tabular}
 
 \end{frame}
 
@@ -718,36 +720,131 @@ $n$ & & 8 & Uniform(1, 16) \\
 \end{frame}
 
 \begin{frame}
-\frametitle{Limitations and unknowns}
+\frametitle{Formalizing systems design}
 
-\section{Discussion}
+\section{Big picture?}
 
 \begin{itemize}
-\item Tested only in simulation so far
+
+\item Many design choices represent a tradeoff
 
 \item[]
 
-\item How to characterize robustness to the unforeseen?
+\item \emph{``Which choice did we make?''}
 
 \item[]
 
-\item Can we make a RemyCC for a 10,000x range of throughputs?
-
-\item[]
-
-\item Agreeing on assumptions and goal may not be easy
-
-\item[]
-
-\item End-to-end = hard to handle an overaggressive competitor
-
-\item[]
-
-\item Not proposing Internet-scale deployment any time soon
+\item \emph{``What were the alternatives?''}
 
 \end{itemize}
 
 \end{frame}
+
+\begin{frame}
+\frametitle{Human-designed congestion control, Stanford CS244}
+
+\begin{itemize}
+\item A.~Sivaraman and I developed a rate-control scheme for cellular networks (NSDI '13)
+
+\item[]
+
+\item Alterman \& Quach reproduced some of our measurements
+
+\item[]
+
+\item {\scriptsize\texttt{http://ReproducingNetworkResearch.wordpress.com/2013/03/12/1216/}}
+
+\item[]
+
+\item Won best project award in Stanford CS244 (March 2013)!
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{M.I.T.~6.829 contest (March--April 2013)}
+
+\begin{itemize}
+\item Turnkey network emulator, evaluation
+
+\item Sender, receiver run in Linux containers
+
+\item 4th prize: \$20
+
+\item 3rd prize: \$30
+
+\item 2nd prize: \$40
+
+\item (If beat Sprout) 1st prize: \pause {\color{DarkBlue}{\bf Co-authorship on future paper}}
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Baseline}
+
+\begin{centering}
+\includegraphics[width=0.9\columnwidth]{pointplot-nostudents.png}
+
+\end{centering}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Land of 3,000 student protocols}
+
+\begin{centering}
+\includegraphics[width=0.9\columnwidth]{pointplot.png}
+
+\end{centering}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Sprout is on the frontier}
+
+\begin{centering}
+\includegraphics[width=0.9\columnwidth]{pointplot-withhull.png}
+
+\end{centering}
+
+\end{frame}
+
+%\begin{frame}
+%  \frametitle{Alternate Remy: MIT students}
+%
+%\begin{centering}
+%\only<1>{\includegraphics[width=0.9\textwidth]{pointplot-withhull-nosprout-minus4.pdf}}\only<2>{\includegraphics[width=0.9\textwidth]{pointplot-withhull-nosprout-minus3.pdf}}\only<3>{\includegraphics[width=0.9\textwidth]{pointplot-withhull-nosprout-minus2.pdf}}\only<4>{\includegraphics[width=0.9\textwidth]{pointplot-withhull-nosprout-minus1.pdf}}\only<5>{\includegraphics[width=0.9\textwidth]{pointplot-withhull-nosprout.pdf}}\only<6>{\includegraphics[width=0.9\textwidth]{pointplot-withhull.pdf}}
+%
+%\end{centering}
+%
+%\end{frame}
+
+%\begin{frame}
+%\frametitle{Future work}
+%
+%\section{Discussion}
+%
+%\begin{itemize}
+%\item Real-time implementation
+%
+%\item[]
+%
+%\item Is there an ``operating range-performance'' product?
+%
+%\item[]
+%
+%\item What is the value of different congestion signals?
+%
+%\item[]
+%
+%\item What is the cost of TCP-friendliness?
+%
+%\end{itemize}
+%
+%\end{frame}
 
 %\begin{frame}
 %\frametitle{Surprises}
@@ -797,7 +894,7 @@ $n$ & & 8 & Uniform(1, 16) \\
 %\end{frame}
 
 \begin{frame}
-\frametitle{Conclusions}
+\frametitle{New tradeoffs}
 
 \large
 
@@ -819,8 +916,24 @@ $n$ & & 8 & Uniform(1, 16) \\
 
 \end{itemize}
 
-\ssline
-\ssline
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Final thoughts}
+
+\begin{centering}
+
+\LARGE \textcolor{DarkGreen}{If congestion control is the answer,\\what's the question?}
+
+\vspace{\baselineskip}
+
+\LARGE \textcolor{NavyBlue}{Are there better answers?}
+
+\end{centering}
+
+\vspace{\baselineskip}
+\vspace{\baselineskip}
 
 \begin{centering}
 
@@ -828,14 +941,16 @@ $n$ & & 8 & Uniform(1, 16) \\
 
 \vspace{7 pt}
 
-\{keithw, hari\}@mit.edu
+remy@mit.edu
 
 \end{centering}
 
-\begin{raggedleft}
-\includegraphics[width=2 cm]{wirelessmitlogo.png}
+\noindent \begin{tabular}{lp{5.5 cm}r}
 
-\end{raggedleft}
+\includegraphics[width=1.75 cm]{csaillogomed.png}
+& & \includegraphics[width=2 cm]{wirelessmitlogo.png} \\
+
+\end{tabular}
 
 \end{frame}
 
