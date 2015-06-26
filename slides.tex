@@ -10,8 +10,8 @@
 \title{TCP ex Machina: \\Computer-Generated Congestion Control}
 
 \author{Keith~Winstein}
-\institute{MIT CSAIL \& Wireless@MIT\\\vspace{\baselineskip}\textcolor{DarkBlue}{http://web.mit.edu/remy}}
-\date{October 23, 2013}
+\institute{Stanford University}
+\date{February 26, 2015}
 
 \begin{document}
 
@@ -19,16 +19,15 @@
 
 \titlepage
 
-\noindent \begin{tabular}{lp{5.5 cm}r}
+\noindent
 
-\includegraphics[width=1.75 cm]{csaillogomed.png}
-& & \includegraphics[width=2 cm]{wirelessmitlogo.png} \\
+\begin{centering}
 
-\end{tabular}
+\includegraphics[width=1.75 cm]{stanford-tree.jpg}
+
+\end{centering}
 
 \end{frame}
-
-\institute{MIT Computer Science and Artificial Intelligence Laboratory}
 
 \section{Introduction}
 
@@ -50,20 +49,35 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{The march of congestion control mechanisms}
-\only<1>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march-4.pdf}
+\frametitle{The march of congestion-control protocols}
+\only<1>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march2-1.pdf}
 
 }
-\only<2>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march-3.pdf}
+\only<2>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march2-2.pdf}
 
 }
-\only<3>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march-2.pdf}
+\only<3>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march2-3.pdf}
 
 }
-\only<4>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march-1.pdf}
+\only<4>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march2-4.pdf}
 
 }
-\only<5>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march.pdf}
+\only<5>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march2-5b.pdf}
+
+}
+\only<6>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march2-5.pdf}
+
+}
+\only<7>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march2-6.pdf}
+
+}
+\only<8>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march2-7.pdf}
+
+}
+\only<9>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march2-8.pdf}
+
+}
+\only<10>{\noindent \hspace{-.75 cm} \includegraphics[width=1.1\textwidth]{march2-9.pdf}
 
 }
 \end{frame}
@@ -141,14 +155,34 @@
 
 \Large
 
+On today's Internet:
+
+\begin{columns}
+
+\begin{column}{0.66\textwidth}
+
 \begin{itemize}
 \item Mask stochastic loss
-\item Bufferbloat
-\item Mask out-of-order delivery
-\item No parallel/multipath routing
-\item[]
-\item[] {\it Advice for Internet Subnetwork Designers}\\ (RFC 3819) is 21,000 words!
+\item[] \hspace{1 cm}$\rightarrow$ {\bf \textcolor{Maroon}{bufferbloat}}
+%\item Bufferbloat
+
+\item No out-of-order delivery
+\item[] \hspace{1 cm}$\rightarrow$ {\bf \textcolor{Maroon}{no parallel routing}}
 \end{itemize}
+
+\end{column}
+
+\begin{column}{0.33\textwidth}
+
+\includegraphics[width=\textwidth]{transport.pdf}
+
+\end{column}
+
+\end{columns}
+
+\vspace{\baselineskip}
+
+{\it Advice for Internet Subnetwork Designers}\\ (RFC 3819) is 21,000 words!
 
 \end{frame}
 
@@ -181,16 +215,30 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Better: free the network to evolve}
+\frametitle{\textbf{Idea}: computer-generated transport}
 
-\Large Transport layer should adapt to \textbf{\textcolor{DarkBlue}{whatever}}:
+\Large Transport layer should adapt to \textbf{whatever}
+
+\begin{columns}
+
+\begin{column}{0.66 \textwidth}
 
 \begin{itemize}
-\item network does
+\item network may do (\textbf{\textcolor{DarkBlue}{model}})
 
-\item application wants
+\item application wants (\textbf{\textcolor{DarkGreen}{mission}})
 
 \end{itemize}
+
+\end{column}
+
+\begin{column}{0.33\textwidth}
+
+\includegraphics[width=\textwidth]{transport.pdf}
+
+\end{column}
+
+\end{columns}
 
 \end{frame}
 
@@ -211,20 +259,24 @@
 \textcolor{DarkBlue}{\bf Input:}
 
 \begin{itemize}
-\item Prior assumptions \hspace{3.01 cm} \textcolor{DarkBlue}{(what network may do)}
+\item Assumptions about network and workload (\textbf{\textcolor{DarkBlue}{model}})
 
-\item Goal \hspace{5.275 cm}\textcolor{DarkBlue}{(what app wants)}
+\item Application's objective (\textbf{\textcolor{DarkGreen}{mission}})
 \end{itemize}
 
 \textcolor{DarkBlue}{\bf Output:} CC algorithm for a TCP sender \hspace{0.177 cm}\textcolor{DarkBlue}{(RemyCC)}
 
 \ssline
 
-\textcolor{DarkBlue}{\bf Time:} a few hours
+\textcolor{DarkBlue}{\bf Time:} hours to days
 
-\ssline
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
 
-\textcolor{DarkBlue}{\bf Cost:} \$5--\$10 on Amazon EC$^2$
+\scriptsize
+
+%KW and Hari Balakrishnan, \textbf{TCP ex Machina: Computer-Generated Congestion Control}, \textit{SIGCOMM 2013}
 
 \end{frame}
 
@@ -417,42 +469,56 @@ $\min_i \textsf{throughput}_i$
 \end{frame}
 
 \begin{frame}
-\frametitle{A RemyCC tracks three congestion signals}
+\frametitle{A RemyCC tracks four congestion signals}
 
 \large
 
-\begin{centering}
-\noindent \hspace{-0.75 cm}\begin{tabular}{ll}
-\textcolor{DarkBlue}{$r\_ewma$}: & moving average of interval between acks \\
+\hspace{0.5 cm}\begin{minipage}{10.0 cm}
+\begin{itemize}
 
-\\
+\item[$rec\_rate_\alpha$:] \textcolor{Red}{\textit{``How fast are packets arriving (now)?''}}
 
-\textcolor{DarkBlue}{$s\_ewma$}: & \ldots between sender timestamps echoed in acks \\
+\item[$rec\_rate_\beta$:] \textcolor{Red}{\textit{``How fast are packets arriving (smoothed)?''}}
 
-\\
+\item[]
 
-\textcolor{DarkBlue}{$rtt\_ratio$}: & ratio of last RTT to smallest RTT so far \\
+\item[$send\_rate$:] \textcolor{Red}{\textit{``How fast have I been sending?''}}
 
-\end{tabular}
+\item[]
 
-\end{centering}
+\item[$rtt\_ratio$:] ratio of last RTT to smallest RTT so far
+
+\textcolor{Red}{\textit{``How long is the queue?''}}
+
+\end{itemize}
+\end{minipage}
+
 \end{frame}
 
 \begin{frame}
-\frametitle{Why these three congestion signals?}
+\frametitle{Why these four features?}
 
 \Large
 
 \begin{itemize}
 
-\item Benefit can be measured empirically
+\item We can measure the benefit of each!
+
+\item[]
+
+\item Removing any one hurts
 
 \begin{itemize}
-\item In our experiments, little help from adding more
-\item Other networks might find differently
+\item losing $rec\_rate_\alpha$ hurts the most
 \end{itemize}
 
+\item[]
+
 \item More signals increase search time
+
+\item[]
+
+\item[] \ldots but others might help on some networks
 
 \end{itemize}
 
@@ -463,7 +529,7 @@ $\min_i \textsf{throughput}_i$
 
 \Large
 
-\[\textsc{Rule}( \textcolor{DarkBlue}{r\_ewma}, \textcolor{DarkBlue}{s\_ewma}, \textcolor{DarkBlue}{rtt\_ratio} ) \rightarrow \langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{\tau} \rangle \]
+\[\textsc{RemyCC}( \textcolor{DarkBlue}{r\_ewma}, \textcolor{DarkBlue}{s\_ewma}, \textcolor{DarkBlue}{rtt\_ratio} ) \rightarrow \langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{\tau} \rangle \]
 
 \ssline
 \ssline
@@ -488,7 +554,7 @@ $\min_i \textsf{throughput}_i$
 \textbf{On ack:}
 
 \begin{itemize}
-\item $\langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{\tau}\rangle \leftarrow \textsc{Rule}( \textcolor{DarkBlue}{r\_ewma}, \textcolor{DarkBlue}{s\_ewma}, \textcolor{DarkBlue}{rtt\_ratio} )$
+\item $\langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{\tau}\rangle \leftarrow \textsc{RemyCC}( \textcolor{DarkBlue}{r\_ewma}, \textcolor{DarkBlue}{s\_ewma}, \textcolor{DarkBlue}{rtt\_ratio} )$
 
 \item $\texttt{cwnd} \leftarrow \textcolor{Red}{m} \cdot \texttt{cwnd} + \textcolor{Red}{b}$
 \end{itemize}
@@ -510,7 +576,7 @@ $\min_i \textsf{throughput}_i$
 
 \colorbox{Bisque}{
 \begin{minipage}{\textwidth}
-Find piecewise-continuous \textsc{Rule}() that optimizes \\ expected value of objective function.
+Find piecewise-continuous \textsc{RemyCC}() that \\ optimizes expected value of objective function
 
 \end{minipage}}
 
@@ -523,14 +589,14 @@ Find piecewise-continuous \textsc{Rule}() that optimizes \\ expected value of ob
 
 \textbf{On ack:}
 
-\begin{itemize}
-\item $\langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{\tau}\rangle \leftarrow \textsc{Rule}( r\_ewma, s\_ewma, \begin{tabular}{l}\only<2>{\cellcolor{DarkBlue}}\textcolor{DarkBlue}{\textbf{rtt\_ratio}}\end{tabular} )$
-\end{itemize}
+\vspace{\baselineskip}
+
+\noindent \mbox{$\langle \textcolor{Red}{m}, \textcolor{Red}{b}, \textcolor{Red}{\tau}\rangle \leftarrow \textsc{\footnotesize RemyCC}( send\_rate, rec\_rate_{\alpha},\begin{tabular}{l}\only<2>{\cellcolor{DarkBlue}}\textcolor{DarkBlue}{$rec\_rate_{\beta}, rtt\_ratio$}\end{tabular} )$}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Remy example: Prior assumptions}
+\frametitle{Remy example: \textbf{\textcolor{DarkBlue}{model}}}
 
 \large
 
@@ -547,7 +613,7 @@ RTT & & Uniform(100, 200) & ms \\
 
 \\
 
-$n$ & & Uniform(1, 16) \\
+$n$ & & Uniform(1, 16) & how many flows? \\
 
 \\
 
@@ -560,7 +626,7 @@ $n$ & & Uniform(1, 16) \\
 \end{frame}
 
 \begin{frame}
-\frametitle{Remy example: Objective}
+\frametitle{Remy example: \textbf{\textcolor{DarkGreen}{mission}}}
 
 \LARGE
 
@@ -600,10 +666,10 @@ $n$ & & Uniform(1, 16) \\
 \end{frame}
 
 \begin{frame}
-\frametitle{Scenario 1: details}
+\frametitle{Scenario 1: model \& mission}
 
 \begin{tabular}{lllll}
-\bf Quantity & & \bf Simulation parameter & \bf Remy assumptions \\
+\bf Quantity & & \bf Simulation parameter & \bf Remy \textcolor{DarkBlue}{model} \\
 
 \hline Link speed & & 15~Mbps & Uniform(10, 20)~Mbps \\
 
@@ -620,7 +686,7 @@ $n$ & & 8 & Uniform(1, 16) \\
 \ssline
 \ssline
 
-\textbf{Remy objective:} \[\sum_i \log \left[ \frac{\textsf{throughput}_i}{\big(\textsf{delay}_i\big)^{\textcolor{DarkBlue}{{\bm \delta}}}} \right]\]
+\textbf{Remy \textcolor{DarkGreen}{missions}:} \[\sum_i \log \left[ \frac{\textsf{throughput}_i}{\big(\textsf{delay}_i\big)^{\textcolor{DarkBlue}{{\bm \delta}}}} \right]\]
 
 \[\textcolor{DarkBlue}{{\bm \delta}} \in \bigg\{ \frac{1}{10}, 1, 10 \bigg\} \]
 
@@ -654,68 +720,41 @@ $n$ & & 8 & Uniform(1, 16) \\
 \end{centering}
 \end{frame}
 
-%\begin{frame}
-%\frametitle{Scenario 4: data center}
-%
-%\textbf{Throughput (Mbps):}
-%
-%\begin{tabular}{lll}
-%&  Mean &  Median \\
-% DCTCP (ECN) & \cellcolor{Green} 179 & 144 \\
-% RemyCC (DropTail) & 175 & \cellcolor{Green} 158 \\
-% RemyCC+RED & 102,  & \\
-%\vspace{\baselineskip}
-%\end{tabular}
-%
-%\ssline
-%\ssline
-%
-%\textbf{RTT (ms):}
-%
-%\begin{tabular}{lll}
-%&  Mean &  Median \\
-% DCTCP (ECN) & \cellcolor{Green}{7.5} & \cellcolor{Green}{6.4} \\
-% RemyCC (DropTail) & {34} & {39} \\
-%\bf RemyCC+RED & 102,  & \\
-%\vspace{\baselineskip}
-%\end{tabular}
-%
-%\end{frame}
-%
-%\begin{frame}
-%\frametitle{Scenario 5: heterogenous traffic}
-%
-%\begin{itemize}
-%\item Standing queue from cross traffic can't be solved end-to-end
-%\item But can keep up in throughput if included in assumptions
-%\end{itemize}
-%
-%\ssline
-%
-%\begin{tabular}{lll}
-%\bf Mean off time & \bf RemyCC tput & \bf Compound tput \\
-%\hline 200 ms & \cellcolor{Green} 2.12 (.11)~Mbps & 1.79 (.18)~Mbps \\
-%100 & 2.18 (.08)  & \cellcolor{Green} 2.75 (.27) \\
-%10 & 2.28 (.10) & \cellcolor{Green} 3.9 (.13) \\
-%\\
-%\\
-%\bf Mean size & \bf RemyCC tput & \bf Cubic tput \\
-%\hline
-%100 KBytes & \cellcolor{Green} 2.04 (.14) & 1.31 (.16)\\
-%1 MByte & \cellcolor{Green} 2.09 (.11) & 1.28 (.11) \\
-%\end{tabular}
-%
-%\end{frame}
-
 \begin{frame}
 \frametitle{The effect of prior knowledge}
 
 \begin{centering}
-%\only<1>{\includegraphics[width=8.5 cm]{newsweep/newsweep-a.pdf}}\only<2>{\includegraphics[width=8.5 cm]{newsweep/newsweep-b.pdf}}\only<3>{\includegraphics[width=8.5 cm]{newsweep/newsweep-c.pdf}}\only<4>{\includegraphics[width=8.5 cm]{newsweep/newsweep-d.pdf}}
-%\includegraphics[width=8.8 cm]{spec2.pdf}
-\only<1>{\includegraphics[width=9.5 cm]{spec3-a.pdf}}\only<2>{\includegraphics[width=9.5 cm]{spec3-b.pdf}}\only<3>{\includegraphics[width=9.5 cm]{spec3-c.pdf}}
+
+\noindent \only<1>{\includegraphics[width=3.1 in]{oprange-1.pdf}}\only<2>{\includegraphics[width=3.1 in]{oprange-2.pdf}}\only<3>{\includegraphics[width=3.1 in]{oprange-3.pdf}}\only<4>{\includegraphics[width=3.1 in]{oprange-4.pdf}}\only<5>{\includegraphics[width=3.1 in]{oprange-5.pdf}}\only<6>{\includegraphics[width=3.1 in]{oprange-6.pdf}}\only<7>{\includegraphics[width=3.1 in]{oprange-all.pdf}}
 
 \end{centering}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Safety and effectiveness of congestion control}
+
+\Large
+
+What is safety?
+
+\begin{itemize}
+
+\item System always cycles
+
+\item No collapses
+
+\item Quick convergence time
+
+\item Nice to verify this programmatically!
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\includegraphics[width=\textwidth]{absolute-intersend-plot.pdf}
 
 \end{frame}
 
@@ -725,7 +764,7 @@ $n$ & & 8 & Uniform(1, 16) \\
 \section{Big picture?}
 
 \begin{itemize}
-
+ 
 \item Many design choices represent a tradeoff
 
 \item[]
@@ -737,7 +776,6 @@ $n$ & & 8 & Uniform(1, 16) \\
 \item \emph{``What were the alternatives?''}
 
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}
@@ -779,6 +817,14 @@ $n$ & & 8 & Uniform(1, 16) \\
 \item (If beat Sprout) 1st prize: \pause {\color{DarkBlue}{\bf Co-authorship on future paper}}
 
 \end{itemize}
+
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
+\visible<3>{\scriptsize Anirudh Sivaraman, KW, Pauline Varley, Somak
+  Das, Joshua Ma, Ameesh Goyal, Jo\~{a}o Batalha, and Hari Balakrishnan,
+  \textbf{Protocol Design Contests}, \textit{Computer Communications Review} (July 2014)}
 
 \end{frame}
 
@@ -937,20 +983,69 @@ $n$ & & 8 & Uniform(1, 16) \\
 
 \begin{centering}
 
-\textcolor{DarkBlue}{http://web.mit.edu/remy}
-
 \vspace{7 pt}
 
-remy@mit.edu
+keithw@cs.stanford.edu
 
 \end{centering}
 
-\noindent \begin{tabular}{lp{5.5 cm}r}
+\noindent
 
-\includegraphics[width=1.75 cm]{csaillogomed.png}
-& & \includegraphics[width=2 cm]{wirelessmitlogo.png} \\
+\begin{centering}
 
-\end{tabular}
+\includegraphics[width=1.75 cm]{stanford-tree.jpg}
+
+\end{centering}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{RemyCC competing against itself}
+
+\begin{centering}
+
+\noindent \only<1>{\includegraphics[width=3.3 in]{homo-1.pdf}}\only<2>{\includegraphics[width=3.3 in]{homo-2.pdf}}\only<3>{\includegraphics[width=3.3 in]{homo-3.pdf}}
+
+\end{centering}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{RemyCC competing against TCP NewReno}
+
+\begin{centering}
+
+\noindent \only<1>{\includegraphics[width=3.3 in]{hetero-1.pdf}}\only<2>{\includegraphics[width=3.3 in]{hetero-2.pdf}}\only<3>{\includegraphics[width=3.3 in]{hetero-3.pdf}}
+
+\end{centering}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{When the model is wrong about the topology}
+
+\large
+
+\begin{centering}
+\textcolor{DarkBlue}{\only<1>{One bottleneck}\only<2>{Two bottlenecks}}
+
+\end{centering}
+
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
+\only<1>{\includegraphics[width=\textwidth]{onelink.pdf}}\only<2>{\includegraphics[width=\textwidth]{twolink.pdf}}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{centering}
+\frametitle{When the model is wrong about the topology}
+
+\noindent \only<1>{\includegraphics[width=3.4 in]{multilink-5.pdf}}\only<2>{\includegraphics[width=3.4 in]{multilink-4.pdf}}\only<3>{\includegraphics[width=3.4 in]{multilink-3.pdf}}\only<4>{\includegraphics[width=3.4 in]{multilink-all.pdf}}
+
+\end{centering}
 
 \end{frame}
 

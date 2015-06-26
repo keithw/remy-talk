@@ -31,6 +31,8 @@ sub transformy {
 
   $y = 768 * ($y ** 0.5) / (768 ** 0.5);
 
+  $y = 768 - $y;
+
   $y += 8;
 
   return $y;
@@ -66,7 +68,7 @@ sub parse_whisker {
 sub transformu {
   my ( $usage ) = @_;
 
-  return 1 - (1 - $usage) ** 10;
+  return ((1 - (1 - $usage) ** 10) + 0.25) * (1.0 / 1.25);
 }
 
 sub min {
@@ -102,7 +104,7 @@ LINE: while ( <> ) {
 
   print TARGET q{<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="836" width="1088" version="1.1">};
 
-  print TARGET q{ <text style="letter-spacing:0px;word-spacing:0px;" font-weight="normal" xml:space="preserve" font-size="40px" font-stretch="normal" line-height="125%" font-variant="normal" y="823.08478" x="491.47324" font-family="FreeSans" font-style="normal" fill="#000000"><tspan x="491.47324" y="823.08478">s_ewma</tspan></text><text style="letter-spacing:0px;word-spacing:0px;" font-weight="normal" xml:space="preserve" transform="matrix(0,-1,1,0,0,0)" font-stretch="normal" line-height="125%" font-size="40px" font-variant="normal" y="21.559999" x="-457.80063" font-family="FreeSans" font-style="normal" fill="#000000"><tspan x="-457.80063" y="21.559999">r_ewma</tspan></text> };
+  print TARGET q{ <text style="letter-spacing:0px;word-spacing:0px;" font-weight="normal" xml:space="preserve" font-size="40px" font-stretch="normal" line-height="125%" font-variant="normal" y="823.08478" x="491.47324" font-family="FreeSans" font-style="normal" fill="#000000"><tspan x="491.47324" y="823.08478">send rate</tspan></text><text style="letter-spacing:0px;word-spacing:0px;" font-weight="normal" xml:space="preserve" transform="matrix(0,-1,1,0,0,0)" font-stretch="normal" line-height="125%" font-size="40px" font-variant="normal" y="21.559999" x="-457.80063" font-family="FreeSans" font-style="normal" fill="#000000"><tspan x="-457.80063" y="21.559999">receive rate</tspan></text> };
 
   my ( @whiskers ) = m{\[(.*?)\]}g;
 
@@ -130,15 +132,15 @@ LINE: while ( <> ) {
     my $left_edge = transformx( $lo_sewma );
     my $right_edge = transformx( $hi_sewma );
 
-    my $top_edge = transformy( $lo_rewma );
-    my $bottom_edge = transformy( $hi_rewma );
+    my $top_edge = transformy( $hi_rewma );
+    my $bottom_edge = transformy( $lo_rewma );
 
-    my $height = $bottom_edge - $top_edge;
+    my $height = abs($top_edge - $bottom_edge);
     my $width = $right_edge - $left_edge;
 
     $usage = transformu( $usage );
 
-    my $colorval = int( 255 - 255 * $usage );
+    my $colorval = int( 255 - 192 * $usage );
     $colorval = 0 if $colorval < 0;
     $colorval = 255 if $colorval > 255;
 
@@ -153,7 +155,7 @@ LINE: while ( <> ) {
     my $stroke_width = 6;
 
     if ( $new_whisker ) {
-      ( $red, $green, $blue ) = ( 64, 64, 192 );
+      ( $red, $green, $blue ) = ( 128, 128, 255 );
       $edge_color = "rgb(255,255,255)";
       $boxvar = \$topboxes;
       $textvar = \$toptext;
