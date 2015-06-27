@@ -7,11 +7,11 @@
 
 \newcommand{\ssline}{\vspace{8 pt}}
 
-\title{TCP ex Machina: \\Computer-Generated Congestion Control}
+\title{TCP ex Machina: \\computer-generated protocols for \\decentralized sharing on the Internet}
 
 \author{Keith~Winstein}
 \institute{Stanford University}
-\date{February 26, 2015}
+\date{June 26, 2015}
 
 \begin{document}
 
@@ -46,6 +46,26 @@
 
 \end{itemize}
 
+\end{frame}
+
+\begin{frame}
+  \begin{centering}
+    \includegraphics[width=\textwidth]{net.png}
+    \end{centering}
+\end{frame}
+
+\begin{frame}
+  \frametitle{TCP (simplified)}
+
+\large
+  
+  \begin{itemize}
+  \item Packets outstanding $\le$ \emph{congestion window} (\texttt{cwnd})
+  \item[]
+  \item \textbf{Initially}: $\texttt{cwnd} \leftarrow 3$
+  \item \textbf{If} all \texttt{cwnd} packets received: $\texttt{cwnd} = \texttt{cwnd} \cdot 2$
+  \item \textbf{Else}: $\texttt{cwnd} = \texttt{cwnd} / 2$
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -215,7 +235,7 @@ On today's Internet:
 \end{frame}
 
 \begin{frame}
-\frametitle{\textbf{Idea}: computer-generated transport}
+\frametitle{\textbf{Idea}: computer-synthesized transport}
 
 \Large Transport layer should adapt to \textbf{whatever}
 
@@ -248,7 +268,7 @@ On today's Internet:
 \colorbox{Bisque}{
 \begin{centering}
 \noindent \begin{tabular}{ll}
-\Large \textcolor{DarkRed}{\bf Remy}: & \Large a program that generates \\ & \Large congestion-control schemes offline
+\Large \textcolor{DarkRed}{\bf Remy}: & \Large a program that synthesizes \\ & \Large congestion-control schemes offline
 \end{tabular}
 
 \end{centering}}
@@ -442,6 +462,41 @@ $\min_i \textsf{throughput}_i$
 \end{centering}
 
 \Large \noindent \hspace{-.5cm} \mbox{\textcolor{DarkBlue}{\textbf{*} Assuming every node is running the same algorithm.}}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Internet congestion control as a Dec-POMDP}
+
+\begin{itemize}
+
+\item[$I$:] independent endpoint computers
+
+\pause
+
+\item[$S$:] packets in net + whether each computer has data to send now
+
+\pause
+
+\item[$A_i$:] \{ send a packet, don't send a packet \}
+
+\pause
+
+\item[$\Omega$:] \mbox{acks from corresponding receiver ($O$ = deterministic)}
+
+\pause
+
+\item[$T$:] the \textbf{\textcolor{DarkBlue}{model}}
+
+\pause
+
+\item[$R$:] the \textbf{\textcolor{DarkGreen}{mission}}
+
+\item[]
+
+\item[] \fbox{\textcolor{DarkGreen}{\textbf{Complexity in general:}} undecidable}
+
+\end{itemize}
 
 \end{frame}
 
@@ -740,13 +795,13 @@ What is safety?
 
 \begin{itemize}
 
-\item System always cycles
-
-\item No collapses
+\item Bound \textbf{worst-case} performance
+  
+\item System always converges to cycle
 
 \item Quick convergence time
 
-\item Nice to verify this programmatically!
+\item Can we verify this programmatically?
 
 \end{itemize}
 
@@ -979,11 +1034,8 @@ What is safety?
 \end{centering}
 
 \vspace{\baselineskip}
-\vspace{\baselineskip}
 
 \begin{centering}
-
-\vspace{7 pt}
 
 keithw@cs.stanford.edu
 
@@ -993,7 +1045,9 @@ keithw@cs.stanford.edu
 
 \begin{centering}
 
-\includegraphics[width=1.75 cm]{stanford-tree.jpg}
+\vspace{\baselineskip}
+  
+\includegraphics[width=1.5 cm]{stanford-tree.jpg}
 
 \end{centering}
 
