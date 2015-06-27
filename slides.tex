@@ -63,7 +63,7 @@
   \item Packets outstanding $\le$ \emph{congestion window} (\texttt{cwnd})
   \item[]
   \item \textbf{Initially}: $\texttt{cwnd} \leftarrow 3$
-  \item \textbf{If} all \texttt{cwnd} packets received: $\texttt{cwnd} = \texttt{cwnd} \cdot 2$
+  \item \textbf{If} all \texttt{cwnd} packets received: $\texttt{cwnd} = \texttt{cwnd} + 1$
   \item \textbf{Else}: $\texttt{cwnd} = \texttt{cwnd} / 2$
   \end{itemize}
 \end{frame}
