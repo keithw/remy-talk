@@ -3,7 +3,9 @@
 \usetheme{Dresden}
 \usecolortheme{beaver}
 
-\usepackage{import, fancybox, graphicx, color, colortbl, bm}
+\usepackage[normalem]{ulem}
+
+\usepackage{import, fancybox, graphicx, color, colortbl, bm, microtype}
 
 \newcommand{\ssline}{\vspace{8 pt}}
 
@@ -11,7 +13,7 @@
 
 \author{Keith~Winstein}
 \institute{Stanford University}
-\date{August 25, 2015}
+\date{August 31, 2015}
 
 \begin{document}
 
@@ -1020,37 +1022,209 @@ What is safety?
 \end{frame}
 
 \begin{frame}
+  \frametitle{New projects}
 
-\frametitle{Final thoughts}
+\large
+  
+\begin{itemize}
 
+\item \textbf{\textcolor{DarkBlue}{Mahimahi}}: composable network emulator containers
+
+\item[]
+  
+\item \textbf{\textcolor{DarkBlue}{Cloud Query Planner}}
+
+\item[]
+  
+\item \textbf{\textcolor{DarkBlue}{Alfalfa}}: continuation-based streaming video
+
+\item[]
+  
+\item \textbf{\textcolor{DarkBlue}{Self-Incentivizing Networks}}
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+
+\LARGE
+  
 \begin{centering}
-
-\LARGE \textcolor{DarkGreen}{If congestion control is the answer,\\what's the question?}
-
-\vspace{\baselineskip}
-
-\LARGE \textcolor{NavyBlue}{Are there better answers?}
+  
+  [mahimahi demo]
 
 \end{centering}
 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Cloud Query Planner}
+
+  \large
+
+  \begin{itemize}
+    \item Idea: solve \textcolor{DarkBlue}{problems}, not \textcolor{Maroon}{workloads}
+
+    \item[]
+
+    \item Library of solvers for heterogenous datacenters
+
+    \item[]
+
+    \item Example problem: GraySort benchmark.
+
+    \item[]
+
+    \item Several strategies to compromise upfront time vs.~query perf.~vs.~money
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Proposal: understand and expose the tradeoffs}
+  
+\includegraphics[width=0.7 \textwidth]{sliders.png}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Model and reality}
+
+\Large
+
+  \begin{itemize}
+  \item \textcolor{DarkBlue}{\bf Model} informs \textcolor{DarkBlue}{\bf reality}: recommends strategies based on performance/cost predictions.
+
+    \item[]
+    
+    \item \textcolor{DarkBlue}{\bf Reality} informs \textcolor{DarkBlue}{\bf model}: learns constants that drive model predictions.
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}
+\frametitle{Alfalfa}
+
+\large
+
+\begin{itemize}
+
+\item Problem: streaming video wastes \~{}1 Mbps because user \emph{might} need to seek
+
+\item[]
+  
+\item Solution: understand the video decoder and encode continuations
+
+\item[]
+  
+\item Benefits: instant edits, progressive pause, fast seeks
+
+\item[]
+
+\item ``World Wide Web of Video''
+
+\item[]
+
+\item Live TV test project
+
+\end{itemize}
+  
+\end{frame}
+
+\begin{frame}
+\frametitle{Self-incentivizing networks}
+
+\large
+
+\begin{itemize}
+
+\item Anybody can add incremental capacity to network
+
+\item Be rewarded for contribution
+
+\item Every packet scheduled ``rationally''
+
+\pause
+
+\item[]
+
+\item \textcolor{DarkRed}{\textbf{\sout{TCP}}}
+
+\pause
+
+\item \textcolor{DarkRed}{\textbf{\sout{BGP}}}
+
+  \pause
+  
+\item \textcolor{DarkRed}{\textbf{\sout{AQM}}}  
+
+\pause
+
+\item \textcolor{DarkRed}{\textbf{\sout{95th-percentile 5-minute window in a month}}}
+\item \textcolor{DarkRed}{\textbf{\sout{lawyers}}}
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{SIN deployments?}
+
+\Large
+  
+  \begin{itemize}
+  \item Neighbor sharing
+
+    \item[]
+    
+  \item Caltrain
+
+    \item[]
+    
+  \item Urban mesh network
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  
+\frametitle{Systems ex Machina}
+
+\begin{itemize}
+
+\item In systems design, \textbf{\textcolor{DarkBlue}{showing our
+    work}$^{*}$} yields better performance, and frees adjacent systems
+to evolve.
+
+\item[] \textcolor{DarkBlue}{\textbf{*} (clearly enough for a computer to recreate the design)}
+
+\end{itemize}
+
 \vspace{\baselineskip}
 
 \begin{centering}
-
 keithw@cs.stanford.edu
 
-\end{centering}
+\vspace{7 pt}
 
-\noindent
-
-\begin{centering}
+\textcolor{DarkBlue}{https://cs.stanford.edu/~keithw}
 
 \vspace{\baselineskip}
-  
+
 \includegraphics[width=1.5 cm]{stanford-tree.jpg}
 
 \end{centering}
 
+\end{frame}
+
+\begin{frame}
+
+  \LARGE
+
+\begin{centering}
+  
+  [backup slides]
+
+\end{centering}
+  
 \end{frame}
 
 \begin{frame}
