@@ -5,7 +5,7 @@
 
 \usepackage[normalem]{ulem}
 
-\usepackage{import, fancybox, graphicx, color, colortbl, bm, microtype}
+\usepackage{import, fancybox, graphicx, color, colortbl, bm, comment, microtype}
 
 \newcommand{\ssline}{\vspace{8 pt}}
 
@@ -13,7 +13,7 @@
 
 \author{Keith~Winstein}
 \institute{Stanford University}
-\date{August 31, 2015}
+\date{September 26, 2016}
 
 \begin{document}
 
@@ -51,9 +51,38 @@
 \end{frame}
 
 \begin{frame}
+\frametitle{What's the right allocation?}
   \begin{centering}
-    \includegraphics[width=\textwidth]{net.png}
-    \end{centering}
+    \includegraphics[width=3.75 in]{congestion-control-figure.pdf}
+
+  \end{centering}
+\end{frame}
+
+\begin{frame}
+\frametitle{What's the right allocation?}
+
+  \begin{centering}
+    \includegraphics[width=1.9 in]{congestion-control-figure.pdf}
+
+    \vspace{\baselineskip}
+
+    \begin{tabular}{ccc|cc|l}
+      \bf A$\rightarrow$a & \bf B$\rightarrow$b & \bf C$\rightarrow$c & $xy$ & $yz$ & \bf total throughput \\
+      \hline
+      \pause
+      20 & 10 & 0  & 20 & 10 & 30\textcolor{White}{.0} \it \textcolor{DarkBlue}{(max utilization; worst for C)}\\
+      \pause
+      10 &  0  & 10 & 20 & 10 & 20\textcolor{White}{.0} \it \textcolor{DarkBlue}{(best for C)} \\
+      \pause
+      0 &  0  & \only<-4>{20}\only<5->{\textcolor{DarkGray}{\sout{20}}}\visible<5->{ 10} & 20 & 10 & \visible<5->{10\textcolor{White}{.0} \it \textcolor{DarkBlue}{(C floods; lots of drops at $y$)}} \\
+      \pause
+      15 & 5  & 5  & 20 & 10 & 25\textcolor{White}{.0} \it \textcolor{DarkBlue}{(max-min fairness)} \\
+      \pause
+      15.8 & 5.8 & 4.2 & 20 & 10 & 25.8 \it \textcolor{DarkBlue}{(proportional fairness)} \\
+    \end{tabular}
+    
+  \end{centering}
+
 \end{frame}
 
 \begin{frame}
@@ -768,6 +797,7 @@ $n$ & & 8 & Uniform(1, 16) \\
 %
 %\end{frame}
 
+\begin{comment}
 \begin{frame}
 \frametitle{Scenario 2: Verizon LTE, $n = 8$}
 
@@ -776,6 +806,7 @@ $n$ & & 8 & Uniform(1, 16) \\
 
 \end{centering}
 \end{frame}
+\end{comment}
 
 \begin{frame}
 \frametitle{The effect of prior knowledge}
@@ -1021,6 +1052,7 @@ What is safety?
 
 \end{frame}
 
+\begin{comment}
 \begin{frame}
   \frametitle{New projects}
 
@@ -1183,6 +1215,8 @@ What is safety?
   \item Urban mesh network
   \end{itemize}
 \end{frame}
+
+\end{comment}
 
 \begin{frame}
   
